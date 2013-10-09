@@ -1,0 +1,35 @@
+<div id="banner">
+	<div class="banner-title">
+		<h1>Blog's</h1>
+		<h1>Games</h1>
+	</div>
+	<div class="banner-img">
+		<%= image_tag( 'banner.jpg' ) -%>
+	</div>
+</div>
+
+<section id="content">
+	<%- @posts.each do |post| -%>
+		<article>
+			<aside>
+				<ul>
+					<%- post.tags.all.each do |tag| -%>
+						<li><a href="#"><span>></span><%= tag.name -%></a></li>
+					<%- end -%>
+					<li><span>></span>Written By</li>
+					<li><span>></span><%= (post.comments.all.size != 0)? post.comments.all.size : 'No' -%> Comments</li>
+					<li><span>></span>date #</li>
+				</ul>
+			</aside>
+			<div class="content">
+				<h1><a href="#"><%= post.title -%></a></h1>
+				<p><%= post.text -%></p>
+				<%= link_to( 'Read More', post_path(post) ) -%>
+				<%= link_to( 'Edit Post', edit_post_path(post) ) -%>
+				<%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%>
+			</div>
+		</article>
+		<hr>
+	<%- end -%>
+	<%= link_to( 'New post', new_post_path ) -%>
+</section>

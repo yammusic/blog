@@ -1,0 +1,5 @@
+<tr>
+	<td><%= tag.name -%></td>
+	<td><%= link_to( 'Edit Tag', edit_post_tag_path(tag.post, tag) ) -%></td>
+	<td><%= link_to( 'Destroy Tag', [tag.post, tag], { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></td>
+</tr>

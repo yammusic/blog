@@ -1,0 +1,10 @@
+<%- url = ( ( @tag.new_record? ) ? post_tags_path( @post ) : post_tag_path( @post ) ) -%>
+<%= form_for( @tag, { :url => url } ) do |f| %>
+	<div>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+<%- end -%>

@@ -1,0 +1,32 @@
+<section id="content">
+	<article class="post">
+		<div class="content-post">
+			<h1 data-mercury="simple" id="title"><%= @post.title -%></h1>
+			<p class="info"><span class="written">Written by Author#</span> | <span class="published">Published Date#</span></p>
+			<p class="text-content"><%= @post.text -%></p>
+			<p><%= link_to( 'Share', '#' ) -%></p>
+			<p><%= link_to( 'Edit Post', '/editor' + request.path, { :id => 'edit_link', :data => { :save_url => mercury_update_post_path(@post) } } ) -%></p>
+			<hr>
+			<div class="tags">
+				<strong>Tags:</strong>
+				<%- @post.tags.each do |tag|  -%>
+					<%= link_to( tag.name, '#' ) -%>
+				<%- end -%>
+			</div>
+			<hr>
+			<div class="wrapper-comments">
+				<%= render( @post.comments ) -%>
+			</div>
+		</div>
+	</article>
+</section>
+
+<%= link_to( 'Edit Tags', post_tags_path(@post) ) -%>
+<h2>Add a tag:</h2>
+<%= render( { :partial => 'tags/form' } ) -%>
+
+<h2>Add a comment:</h2>
+<%= render( { :partial => 'comments/form' } ) -%>
+
+<%= link_to( 'Edit', edit_post_path(@post) ) -%> |
+<%= link_to( 'Back', posts_path ) -%>

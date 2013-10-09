@@ -1,0 +1,10 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.comment { display: inline-block; width: 80%; padding: 20px 0 0; position: relative;
+
+	figure { width: 50px; position: absolute; left: 8%; }
+
+	div.body-comment { display: inline-block; width: 70%; float: right; margin-right: 50px; text-align: left; }
+}

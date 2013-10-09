@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<nav>
+			<figure id="blog-icon" title="Go to Home" onclick="linkHome(this)">
+				<%= image_tag( 'Blog-Icon.png', { :class => 'blogIcon' } ) -%>
+			</figure>
+			<ul>
+				<li><a href="#">Categories</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<form action="/" method="GET">
+				<input type="search" name="search" id="search">
+				<button for="search" alt="Search"></button>
+			</form>
+		</nav>
+	</header>
+
+	<section id="wrapper">
+		<%= yield %>
+	</section>
+
+	<footer>
+		<div class="social-links">
+			<h2>Follow Us:</h2>
+			<ul>
+				<li><%= link_to( image_tag( 'facebook-icon.png' ) ) -%></li>
+				<li><%= link_to( image_tag( 'twitter-icon.png' ) ) -%></li>
+				<li><%= link_to( image_tag( 'instagram-icon.png' ) ) -%></li>
+				<li><%= link_to( image_tag( 'pinterest-icon.png' ) ) -%></li>
+				<li><%= link_to( image_tag( 'rss-icon.png' ) ) -%></li>
+			</ul>
+		</div>
+		<div class="categories-links">
+			<h3>Categories:</h3>
+			<ul>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+				<li><a href="#">Link #</a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<span class="left">Blog 2013. All Rights Reserved &copy;.</span>
+			<span class="right">Designed By Yam Music</span>
+		</div>
+	</footer>
+</body>
+</html>
