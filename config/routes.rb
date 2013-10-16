@@ -10,6 +10,8 @@ Blog::Application.routes.draw do
     member { post :mercury_update }
   end
 
+  resources :categories
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

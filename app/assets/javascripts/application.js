@@ -17,3 +17,17 @@
 function linkHome() { location.href="/"; }
 
 $(document).trigger('initialize:frame');
+
+function categories() {
+    $("nav#categories").toggleClass('active');
+    $("section#global-wrapper").toggleClass('active-categories');
+}
+
+$(function() {
+	$("section#wrapper").click(function() {
+		if ($("nav#categories").hasClass('active')) {
+			$("nav#categories").removeClass('active');
+			$("section#global-wrapper").removeClass('active-categories');
+		}
+	});
+});

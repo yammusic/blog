@@ -9,27 +9,46 @@
 </div>
 
 <section id="content">
-	<%- @posts.each do |post| -%>
+	<%- if @posts.size == 0 -%>
 		<article>
-			<aside>
-				<ul>
-					<%- post.tags.all.each do |tag| -%>
-						<li><a href="#"><span>></span><%= tag.name -%></a></li>
-					<%- end -%>
-					<li><span>></span>Written By</li>
-					<li><span>></span><%= (post.comments.all.size != 0)? post.comments.all.size : 'No' -%> Comments</li>
-					<li><span>></span>date #</li>
-				</ul>
-			</aside>
-			<div class="content">
-				<h1><a href="#"><%= post.title -%></a></h1>
-				<p><%= post.text -%></p>
-				<%= link_to( 'Read More', post_path(post) ) -%>
-				<%= link_to( 'Edit Post', edit_post_path(post) ) -%>
-				<%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%>
-			</div>
+			<h1>Search Result <%= params[:q] -%></h1>
+			<p>No results were found. ¿Want to search again?</p>
+			<%= form_tag( '/', { :method => 'GET' } ) do -%>
+				<%= search_field_tag( :q, params[:q], { :placeholder => 'Search' } ) -%>
+				<%= button_tag( '', { :for => 'search', :alt => 'Search', :name => nil } ) -%>
+			<%- end -%>
 		</article>
-		<hr>
+	<%- else -%>
+		<%- @posts.each do |post| -%>
+			<%- comments = (post.comments.all.size != 0) ? post.comments.all.size : 'No'  -%>
+			<article>
+				<aside>
+					<ul>
+						<%- post.categories.all.each do |c| -%>
+						<li><%= link_to( raw( "<span>></span>"+c.name ), category_path(c) ) -%></li>
+						<%- end -%>
+						<li><span>></span>Written By</li>
+						<li><span>></span><%= comments -%> Comments</li>
+						<li><span>></span>date #</li>
+					</ul>
+				</aside>
+				<div class="content">
+					<h1><%= link_to( post.title, post_path(post) ) -%></a></h1>
+					<p><%= post.text -%></p>
+					<ul class="actions">
+						<li><%= link_to( 'Read More', post_path(post) ) -%></li>
+						<li><%= link_to( 'Edit Post', edit_post_path(post) ) -%></li>
+						<li><%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
+					</ul>
+				</div>
+			</article>
+			<hr>
+		<%- end -%>
+
+		<%- if !defined?(params[:q]) || params[:q].nil? -%>
+			<div class="action-new">
+				<%= link_to( 'New post', new_post_path ) -%>
+			</div>
+		<%- end -%>
 	<%- end -%>
-	<%= link_to( 'New post', new_post_path ) -%>
 </section>

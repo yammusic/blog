@@ -10,7 +10,8 @@
 </table>
 
 <%- @capture = capture do -%>
-	<p>La hora es <%= Time.now -%></p>
+    <p>La hora es <%= Time.now -%></p>
+	<p>La hora es <%= Date.today -%></p>
 <%- end -%>
 
 <%= @capture -%>

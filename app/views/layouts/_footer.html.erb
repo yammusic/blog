@@ -1,0 +1,24 @@
+<footer>
+    <div class="social-links">
+        <h2>Follow Us:</h2>
+        <ul>
+            <li><%= link_to( image_tag( 'facebook-icon.png' ) ) -%></li>
+            <li><%= link_to( image_tag( 'twitter-icon.png' ) ) -%></li>
+            <li><%= link_to( image_tag( 'instagram-icon.png' ) ) -%></li>
+            <li><%= link_to( image_tag( 'pinterest-icon.png' ) ) -%></li>
+            <li><%= link_to( image_tag( 'rss-icon.png' ) ) -%></li>
+        </ul>
+    </div>
+    <div class="categories-links">
+        <h3>Categories:</h3>
+        <ul>
+            <%- Category.listNavAndFooter.each do |c| -%>
+                <li><%= link_to( c.name, category_path(c) ) -%></li>
+            <%- end -%>
+        </ul>
+    </div>
+    <div class="copyright">
+        <span class="left"><%= raw( copyright ) -%></span>
+        <span class="right"><%= powered -%></span>
+    </div>
+</footer>

@@ -1,0 +1,16 @@
+<header>
+	<nav>
+		<figure id="blog-icon" title="Go to Home" onclick="linkHome()">
+			<%= image_tag( 'Blog-Icon.png', { :class => 'blogIcon' } ) -%>
+		</figure>
+		<ul>
+		<%- Menu.all.each do |menu| -%>
+			<li><%= link_to( menu[:name], menu[:href], { :onclick => menu[:onclick] } ) -%></li>
+		<%- end -%>
+		</ul>
+		<%= form_tag( '/', { :method => 'GET' } ) do -%>
+			<%= search_field_tag( :q, params[:q], { :placeholder => 'Search' } ) -%>
+			<%= button_tag( '', { :for => 'search', :alt => 'Search', :name => nil } ) -%>
+		<%- end -%>
+	</nav>
+</header>

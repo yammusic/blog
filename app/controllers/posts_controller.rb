@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
-	http_basic_authenticate_with :name => 'dhh', :password => 'secret', :except => [:index, :show]
+	http_basic_authenticate_with :name => '123', :password => 'abc', :except => [:index, :show]
 
 	def index
-		@posts = Post.all
-
+		@categories = Categories.all
+		if defined?(params[:q]) && !params[:q].nil?
+			@posts = Post.where("title LIKE '%#{params[:q]}%'")
+		else
+			@posts = Post.all
+		end
 		respond_to do |format|
 			format.html
 			format.json { render( { :json => @posts } ) }

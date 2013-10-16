@@ -5,6 +5,12 @@
 * { margin: 0; padding: 0; @include userSelect; }
 html, body { width: 100%; max-width: 100%; min-height: 100%; text-align: center; background: url(/assets/squares.png) fixed; }
 body { padding: 0 !important; }
+
+section#global-wrapper { margin: 0; padding: 0; position: relative; @include transition(.3s);
+
+	&.active-categories { margin-left: 350px; }
+}
+
 header { z-index: 100; background: rgba(255,255,255,.8); position: fixed; box-shadow: 0 0 10px #c7c7c7; width: 100%;
 
 	nav { padding: 10px; text-align: left; position: relative; height: 40px;
@@ -33,7 +39,7 @@ header { z-index: 100; background: rgba(255,255,255,.8); position: fixed; box-sh
 
 		form { float: right; position: relative; margin: 0; margin-right: 20px;
 
-			input[type="search"] { height: 16px; width: 250px; padding: 10px; font-size: 1.4em; margin: 0; color: silver; background: #FAFAFA; }
+			input[type="search"] { height: 16px; width: 250px; padding: 10px; font-size: 1.4em; margin: 0 auto; color: silver; background: #FAFAFA; }
 
 			button[for="search"] { background: url(/assets/search-icon.png) no-repeat; background-size: 100% 100%; width: 30px; height: 30px; border: none; -moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); position: absolute; margin: -34px 235px; opacity: .4;}
 		}
@@ -76,12 +82,12 @@ footer { width: 100%; background: rgba(237,237,237,.8); padding-top: 30px; box-s
 		}
 	}
 
-	.copyright { width: 100%; background: black; padding: 1em 0; display: inline-block; margin-bottom: -7px;
+	.copyright { width: 100%; background: black; padding: 1em 0; display: inline-block; margin-bottom: -7px; text-align: right;
 
 		span { padding: 0 2em; font-size: 14px; color: lightgray;}
 
 		.left { float: left; }
 
-		.right { float: right; }
+		.right { display: inline-block; }
 	}
 }

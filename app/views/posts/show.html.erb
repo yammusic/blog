@@ -3,7 +3,7 @@
 		<div class="content-post">
 			<h1 data-mercury="simple" id="title"><%= @post.title -%></h1>
 			<p class="info"><span class="written">Written by Author#</span> | <span class="published">Published Date#</span></p>
-			<p class="text-content"><%= @post.text -%></p>
+			<p class="text-content" data-mercury="full"><%= @post.text -%></p>
 			<p><%= link_to( 'Share', '#' ) -%></p>
 			<p><%= link_to( 'Edit Post', '/editor' + request.path, { :id => 'edit_link', :data => { :save_url => mercury_update_post_path(@post) } } ) -%></p>
 			<hr>

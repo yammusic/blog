@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require metro-bootstrap
+ *= require categories
  *= require posts
  *= require comments
  *= require style
