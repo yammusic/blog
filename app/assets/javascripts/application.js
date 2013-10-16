@@ -26,7 +26,7 @@ function categories() {
 $(function() {
 	$("section#wrapper").click(function() {
 		if ($("nav#categories").hasClass('active')) {
-			$("nav#categories").removeClass('active');
+			$("nav#categories").removeClass('active').empty();
 			$("section#global-wrapper").removeClass('active-categories');
 		}
 	});
