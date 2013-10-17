@@ -2,10 +2,18 @@
 	<article class="post">
 		<div class="content-post">
 			<h1 data-mercury="simple" id="title"><%= @post.title -%></h1>
-			<p class="info"><span class="written">Written by Author#</span> | <span class="published">Published Date#</span></p>
-			<p class="text-content" data-mercury="full"><%= @post.text -%></p>
+			<p class="info"><span class="written">Written by <%= @post.author -%></span> | <span class="published">Published <%= @post.created -%></span></p>
+			<div class="text-content" id="text" data-mercury="full"><%= raw( @post.text ) -%></div>
 			<p><%= link_to( 'Share', '#' ) -%></p>
 			<p><%= link_to( 'Edit Post', '/editor' + request.path, { :id => 'edit_link', :data => { :save_url => mercury_update_post_path(@post) } } ) -%></p>
+			<p><%= link_to( 'Save', mercury_update_post_path(@post), { :id => 'save_link', :onclick => "var saveUrl = '"+mercury_update_post_path(@post)+"';
+			
+			      // Instantiate the PageEditor
+			      Mercury.PageEditor(saveUrl, {
+			        saveStyle:  null, // 'form', or 'json' (default json)
+			        saveMethod: null, // 'PUT', or 'POST', (create, vs. update -- default PUT)
+			        visible:    true  // boolean - if the interface should start visible or not
+			      }); return( false);" } ) -%></p>
 			<hr>
 			<div class="tags">
 				<strong>Tags:</strong>
@@ -15,12 +23,17 @@
 			</div>
 			<hr>
 			<div class="wrapper-comments">
+				<%= render( { :partial => 'comments/form' } ) -%>
 				<%= render( @post.comments ) -%>
 			</div>
 		</div>
 	</article>
-</section>
-
+</section><br>
+<div id="alert">
+	<p class="content"></p>
+	<hr>
+	<a id="ok-alert" class="btn btn-info">OK</a>
+</div>
 <%= link_to( 'Edit Tags', post_tags_path(@post) ) -%>
 <h2>Add a tag:</h2>
 <%= render( { :partial => 'tags/form' } ) -%>

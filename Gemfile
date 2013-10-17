@@ -9,8 +9,12 @@ gem 'sqlite3'
 
 gem 'RedCloth'
 
+gem 'devise'
+
 # gem 'mercury-rails'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+
+gem 'kaminari'
 
 # Gems used only for assets and not required
 # in production environments by default.

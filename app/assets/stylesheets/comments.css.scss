@@ -4,7 +4,18 @@
 
 div.comment { display: inline-block; width: 80%; padding: 20px 0 0; position: relative;
 
-	figure { width: 50px; position: absolute; left: 8%; }
+	figure { width: 50px; position: absolute; left: 6.5%; }
 
 	div.body-comment { display: inline-block; width: 70%; float: right; margin-right: 50px; text-align: left; }
+}
+
+div.form-comment { margin-bottom: 250px; border: 1px solid red; text-align: center; width: 90%; display: inline-block;
+
+    form { display: inline-block; position: relative; width: 100%;
+
+        div.textarea { text-align: right; margin-right: 30px;
+
+            textarea { width: 80%; height: 25px; display: inline-block; border: 1px solid #CCC; border-radius: 7px; resize: none; padding: 10px; overflow: hidden; }
+        }
+    }
 }

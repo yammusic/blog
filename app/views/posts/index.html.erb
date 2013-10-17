@@ -20,30 +20,31 @@
 		</article>
 	<%- else -%>
 		<%- @posts.each do |post| -%>
-			<%- comments = (post.comments.all.size != 0) ? post.comments.all.size : 'No'  -%>
+			<%- comments = (post.comments.all.size != 0) ? post.comments.all.size : 'No' -%>
 			<article>
 				<aside>
 					<ul>
 						<%- post.categories.all.each do |c| -%>
-						<li><%= link_to( raw( "<span>></span>"+c.name ), category_path(c) ) -%></li>
+							<li><%= link_to( raw( "<span>></span>"+c.name ), category_path(c) ) -%></li>
 						<%- end -%>
-						<li><span>></span>Written By</li>
+						<li><%= raw( "<span>></span>Written By " )+post.author -%></li>
 						<li><span>></span><%= comments -%> Comments</li>
-						<li><span>></span>date #</li>
+						<li><%= raw( "<span>></span>Created " )+post.created -%></li>
 					</ul>
 				</aside>
 				<div class="content">
 					<h1><%= link_to( post.title, post_path(post) ) -%></a></h1>
-					<p><%= post.text -%></p>
+					<p><%= raw( post.text ) -%></p>
 					<ul class="actions">
 						<li><%= link_to( 'Read More', post_path(post) ) -%></li>
-						<li><%= link_to( 'Edit Post', edit_post_path(post) ) -%></li>
 						<li><%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
 					</ul>
 				</div>
 			</article>
 			<hr>
 		<%- end -%>
+
+		<%= paginate @posts -%>
 
 		<%- if !defined?(params[:q]) || params[:q].nil? -%>
 			<div class="action-new">

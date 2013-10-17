@@ -9,14 +9,14 @@
 
 div#banner { position: relative; width: 97%; height: 500px; display: inline-block; margin-top: -15px; margin-bottom: 65px;
 
-	.banner-title { margin-top: 80px;
+	> .banner-title { margin-top: 80px;
 
-		h1 { font-size: 80px; color: lightgray; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 20px black; }
+		> h1 { font-size: 80px; color: lightgray; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 20px black; }
 	}
 
-	.banner-img { position: absolute; top: 0; z-index: -5; width: 100%;
+	> .banner-img { position: absolute; top: 0; z-index: -5; width: 100%;
 
-		img { height: 500px; width: 100%; }
+		> img { height: 500px; width: 100%; }
 	}
 }
 
@@ -73,7 +73,7 @@ section#content { width: 97%; display: inline-block; margin-top: -50px; position
 			}
 		}
 
-		form { position: relative; margin: 0; width: 100%;
+		> form { position: relative; margin: 0; width: 100%;
 
 			div { width: 0; height: 0; display: block !important; }
 
@@ -84,6 +84,27 @@ section#content { width: 97%; display: inline-block; margin-top: -50px; position
 	}
 
 	hr { border: 1.5px solid #999; width: 88%; display: inline-block; }
+
+	nav.pagination { width: 100%; display: inline-block; margin: 0; text-align: right;
+
+		ul { margin-right: 50px; width: auto; height: auto; position: relative; 
+			
+			li { display: inline-block; line-height: 50px; background: #fff; margin-left: -5px; border: 1px solid #ccc; position: relative; @include transition(.3s);
+
+				&:hover { background: rgba(82,168,236,.9); }
+
+				&.current { padding: 0 15px; background: rgba(0,0,0,.8); color: lightgray }
+
+				&.first { border-radius: 5px 0 0 5px; }
+				&.last { border-radius: 0 5px 5px 0; }
+
+				a { float: none; display: inline-block; background: none; border: 0; padding: 0 15px; line-height: 50px;
+
+					&:hover { color: white; }
+				}
+			}
+		}
+	}
 
 	div.action-new { height: 68px; width: 170px; margin: 0 15px 5px; position: relative; display: inline-block;
 
@@ -100,12 +121,12 @@ section#content { width: 97%; display: inline-block; margin-top: -50px; position
 
 		div.content-post { width: 80%; display: inline-block; padding: 10px 0; position: relative;
 
-			p.info { display: inline-block; width: 50%; text-align: left;
+			p.info { display: inline-block; width: 50%; text-align: left; height: auto; margin-bottom: 30px;
 
 				span { margin: 0 7px; }
 			}
 
-			p.text-content { display: inline-block; width: 80%; text-align: justify; height: auto; }
+			div.text-content { display: inline-block; width: 80%; text-align: justify; height: auto; margin-bottom: 20px; }
 
 			> p { display: inline-block; width: 90%; text-align: left; position: relative; height: 68px;
 
@@ -123,4 +144,13 @@ section#content { width: 97%; display: inline-block; margin-top: -50px; position
 			}
 		}
 	}
+
+}
+
+div#alert { position: fixed; width: 300px; border: 15px solid rgba(0,0,0,.5); background: #FFF; padding: 10px 0; text-align: center; background-clip: padding-box; left: 50%; margin-left: -150px;
+	top: 200px; display: none; z-index: 1000;
+
+	p.content { margin: 0; padding: 0; width: 90%; display: inline-block; font-size: 18px; }
+
+	hr { margin: 0; border-color: #CCC; width: 95%; display: inline-block; }
 }

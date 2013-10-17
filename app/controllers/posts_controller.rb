@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
-	http_basic_authenticate_with :name => '123', :password => 'abc', :except => [:index, :show]
-
 	def index
 		@categories = Categories.all
 		if defined?(params[:q]) && !params[:q].nil?
-			@posts = Post.where("title LIKE '%#{params[:q]}%'")
+			@posts = Post.where("title LIKE '%#{params[:q]}%'").order("created DESC").page(params[:page]).per(1)
 		else
-			@posts = Post.all
+			@posts = Post.order('created DESC').page(params[:page]).per(1)
 		end
+
 		respond_to do |format|
 			format.html
 			format.json { render( { :json => @posts } ) }
@@ -16,6 +15,7 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
+		@categories = Category.order("name ASC")
 	end
 
 	def create
@@ -29,38 +29,40 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		@post = Post.find_by_params( params )
 		@tag = Tag.new
 	end
 
 	def edit
-		@post = Post.find(params[:id])
+		@post = Post.find_by_title(params[:id])
 	end
 
 	def update
-		@post = Post.find(params[:id])
+		@post = Post.find_by_params( params )
 
-		if @post.update_attributes(params[:content])
-			redirect_to( @post )
+		if ( !params[ :content ].nil? )
+			params[ :post ] = { :title => params[ :content ][ :title ][ :value ], :text => params[ :content ][ :text ][ :value ] }
+		end
+
+		if ( @post.update_attributes( params[ :post ] ) )
+			if ( request.xhr? )
+				render( { :json => { :msg => 'Post edited successfully',:url => post_path(@post)}.to_json } )
+			else
+				redirect_to( @post )
+			end
 		else
-			render( 'edit' )
+			if ( request.xhr? )
+				render( { :json => { :msg => 'Could not edit the post', :url => post_path(@post)}.to_json } )
+			else
+				render( 'edit' )
+			end
 		end
 	end
 
 	def destroy
-		@post = Post.find(params[:id])
+		@post = Post.find_by_title(params[:id])
 		@post.destroy
 
 		redirect_to( posts_path )
-	end
-
-	def mercury_update
-		@post = Post.find(params[:id])
-
-		if @post.update_attributes(params[:content])
-			redirect_to( @post )
-		else
-			render( 'edit' )
-		end
 	end
 end

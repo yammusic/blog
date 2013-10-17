@@ -455,4 +455,18 @@ $(window).bind('mercury:ready', function() {
   var link = $('#mercury_iframe').contents().find('#edit_link');
   if (link.data('save-url') != undefined) Mercury.saveURL = link.data('save-url');
   link.hide();
+
+  Mercury.on('saved', function() {
+    var $alert = $('#mercury_iframe').contents().find("div#alert");
+        var $msg = arguments[1].msg;
+        var $url = arguments[1].url;
+      $alert.show("fast", function() {
+        $(this).children('p.content').empty().html($msg);
+      });
+      $alert.children("a#ok-alert").click(function(event) {
+        event.preventDefault();
+        $alert.hide("fast");
+        window.location.href = $url;
+      });
+  });
 });

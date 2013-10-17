@@ -18,3 +18,38 @@ nav#categories { position: fixed; height: 100%; width: 350px; background: #333; 
         }
     }
 }
+
+article.post.category { text-align: center;
+
+    h1.category-title { text-transform: uppercase; margin-left: 100px; width: 80%; text-align: left; padding-bottom: 10px; font-size: 60px; }
+
+    hr { display: inline-block; margin: 0; width: 90%; margin-bottom: 20px; }
+
+    div.posts { width: 80%; text-align: left; display: inline-block;
+
+        ul { margin: 0; padding: 0; list-style: none; width: 100%; height: 100%; position: relative; 
+
+            li { margin: 15px 25px; position: relative; 
+
+                a { font-size: 20px; margin: 0; padding: 0; background: rgba(250,250,250,.6); display: block; padding: 20px 0; @include transition;
+
+                    &:hover { background: rgba(82,168,236,.8); text-decoration: none; color: white; }
+                    &:hover > p.title span { margin-left: +10px; opacity: 1; margin-right: 25px; }
+
+                    p { margin: 0 20px; padding: 10px 0; 
+
+                        &.title { margin-left: 30px;
+
+                            span { opacity: 0; margin-left: -10px; @include transition; }
+                        }
+
+                        span.author { margin-left: 15px; }
+                        span.comments { margin-left: 25px; }
+                    }
+                }
+            }
+        }
+
+        p.no-found { font-size: 20px; }
+    }
+}

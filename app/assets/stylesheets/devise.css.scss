@@ -1,0 +1,12 @@
+section#devise {margin-top: 60px;
+
+    form { width: auto; display: inline-block; clear: both;
+
+        label { display: inline-block; width: auto; 
+
+            &.remember { position: relative; top: +3px; margin-bottom: 10px; }
+        }
+    }
+
+    div.or { position: relative; top: -10px; }
+}

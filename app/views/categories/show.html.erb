@@ -1,6 +1,27 @@
-<h1>Category -> <%= @category.name -%></h1>
+<section id="content">
+    <article class="post category">
+        <h1 class="category-title"><%= @category.name -%> Posts</h1>
+        <hr>
 
-<h1>Posts in Category</h1>
-<%- @posts.each do |p| -%>
-    <%= link_to( p.title, post_path(p) ) -%>
-<%- end -%>
+        <div class="posts">
+        <%- if @category.posts.all.size >= 1 -%>
+            <ul>
+                <%- @category.posts.all.map do |p| -%>
+                    <%- comments = (p.comments.all.size != 0) ? p.comments.all.size : 'No' -%>
+                    <li>
+                        <a href="<%= post_path(p) -%>">
+                            <p class="title"><span>></span><%= p.title -%></p>
+                            <p>
+                                <span class="author"><%= p.author -%></span>
+                                <span class="comments"><%= comments -%> Comments</span>
+                            </p>
+                        </a>
+                    </li>
+                <%- end -%>
+            </ul>
+        <%- else -%>
+            <p class="no-found">Found no posts for this category</p>
+        <%- end -%>
+        </div>        
+    </article>
+</section>
