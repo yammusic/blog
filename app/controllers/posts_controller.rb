@@ -2,9 +2,9 @@ class PostsController < ApplicationController
 	def index
 		@categories = Categories.all
 		if defined?(params[:q]) && !params[:q].nil?
-			@posts = Post.where("title LIKE '%#{params[:q]}%'").order("created DESC").page(params[:page]).per(1)
+			@posts = Post.where("title LIKE '%#{params[:q]}%'").order("created DESC").pagination( params )
 		else
-			@posts = Post.order('created DESC').page(params[:page]).per(1)
+			@posts = Post.order('created DESC').pagination( params )
 		end
 
 		respond_to do |format|
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@post = Post.find_by_title(params[:id])
+		@post = Post.find_by_params( params )
 		@post.destroy
 
 		redirect_to( posts_path )

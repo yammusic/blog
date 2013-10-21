@@ -16,6 +16,8 @@ gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
 gem 'kaminari'
 
+gem "autosize-rails", "~> 1.16.7"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

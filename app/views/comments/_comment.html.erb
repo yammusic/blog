@@ -1,15 +1,17 @@
-<div class="comment">
-	<figure class="avatar"><%= image_tag( 'rails.png' ) -%></figure>
-	<div class="body-comment">
-		<p class="info-comment">
-			<span>Written by <%= comment.commenter -%></span>
-			|
-			<span>Published Date#</span>
-		</p>
-		<p class="text-comment"><%= comment.body -%></p>
-		<p class="links">
-			<%= link_to( 'Share', '#' ) -%>
-			<%= link_to( 'Destroy Comment', [comment.post, comment], { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) %>
-		</p>
+<%- if !comment.id.nil? -%>
+	<div class="comment">
+		<figure class="avatar"><%= image_tag( 'rails.png' ) -%></figure>
+		<div class="body-comment">
+			<p class="info-comment">
+				<span>Written by <%= comment.commenter -%></span>
+				|
+				<span>Published <%= comment.created -%></span>
+			</p>
+			<p class="text-comment"><%= comment.body -%></p>
+			<p class="links">
+				<%= link_to( 'Share', '#' ) -%>
+				<%= link_to( 'Destroy Comment', [comment.post, comment], { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) %>
+			</p>
+		</div>
 	</div>
-</div>
+<%- end -%>

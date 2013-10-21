@@ -14,4 +14,12 @@ class Post < ActiveRecord::Base
   def self.find_by_params( params )
       return( self.find_by_title( params[ :id ].gsub( '-', ' ' ) ) )
   end
+
+  def self.find_by_params_comments( params )
+      return( self.find_by_title( params[ :post_id ].gsub( '-', ' ' ) ) )
+  end
+
+  def self.pagination( params, number = 10 )
+    self.page( params[:page] ).per( number )
+  end
 end

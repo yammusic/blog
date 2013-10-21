@@ -4,44 +4,96 @@
 		"selected_items":
 		[
 			[
-				"find_",
-				"find_by_title"
-			],
-			[
-				"pos",
-				"pos-r	position: relative;"
-			],
-			[
-				"po",
-				"pos-r	position: relative;"
+				"pad",
+				"padding"
 			],
 			[
 				"mar",
-				"margin-left"
+				"margin-right"
 			],
 			[
-				"pad",
-				"padding"
+				"ri",
+				"right"
+			],
+			[
+				"comm",
+				"comments"
+			],
+			[
+				"em",
+				"empty"
+			],
+			[
+				"bac",
+				"background-clip"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"req",
+				"required"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"pos",
+				"post"
+			],
+			[
+				"post",
+				"post_path"
+			],
+			[
+				"com",
+				"comments"
+			],
+			[
+				"opac",
+				"opacity"
+			],
+			[
+				"op",
+				"opacify	opacify"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"list-s",
+				"list-style"
 			],
 			[
 				"marg",
 				"margin"
 			],
 			[
+				"lef",
+				"left"
+			],
+			[
+				"find_",
+				"find_by_title"
+			],
+			[
+				"po",
+				"pos-r	position: relative;"
+			],
+			[
 				"add",
 				"addClass"
 			],
 			[
-				"tex",
-				"text-transform"
-			],
-			[
 				"font",
 				"font-size"
-			],
-			[
-				"pa",
-				"padding"
 			],
 			[
 				"sty",
@@ -80,26 +132,66 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/categories/show.html.erb",
+			"file": "app/views/posts/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 773,
+				"buffer_size": 1806,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/layouts/mercury.html.erb",
+			"settings":
+			{
+				"buffer_size": 815,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/categories.css.scss",
+			"file": "app/views/comments/_form.html.erb",
 			"settings":
 			{
-				"buffer_size": 1224,
+				"buffer_size": 309,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/comments.css.scss",
+			"settings":
+			{
+				"buffer_size": 872,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/posts.css.scss",
+			"settings":
+			{
+				"buffer_size": 5878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/devise.css.scss",
+			"settings":
+			{
+				"buffer_size": 294,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/posts/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 1716,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "app/controllers/posts_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1637,
+				"buffer_size": 1465,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,24 +199,8 @@
 			"file": "app/assets/javascripts/mercury.js",
 			"settings":
 			{
-				"buffer_size": 23930,
+				"buffer_size": 24389,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/post.rb",
-			"settings":
-			{
-				"buffer_size": 574,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/posts/_form.html.erb",
-			"settings":
-			{
-				"buffer_size": 883,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -134,6 +210,14 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ena",
+				"LiveReload: Enable/disable plug-ins"
+			],
 			[
 				"rena",
 				"File: Rename"
@@ -191,7 +275,7 @@
 				"Set Syntax: HTML (Rails)"
 			]
 		],
-		"width": 504.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -212,17 +296,27 @@
 	},
 	"file_history":
 	[
-		"/var/www/blog/app/controllers/posts_controller.rb",
-		"/var/www/blog/app/models/post.rb",
-		"/var/www/blog/app/views/posts/show.html.erb",
-		"/var/www/blog/app/views/posts/index.html.erb",
+		"/var/www/blog/app/assets/javascripts/application.js",
+		"/var/www/blog/app/views/categories/show.html.erb",
+		"/var/www/blog/app/assets/stylesheets/categories.css.scss",
+		"/var/www/blog/app/assets/stylesheets/style.css.scss",
 		"/var/www/blog/app/views/posts/_form.html.erb",
+		"/var/www/blog/app/models/post.rb",
+		"/var/www/blog/app/assets/stylesheets/application.css",
+		"/var/www/blog/Gemfile",
+		"/var/www/blog/app/views/devise/registrations/new.html.erb",
+		"/var/www/blog/app/views/devise/passwords/new.html.erb",
+		"/var/www/blog/app/views/devise/sessions/new.html.erb",
+		"/var/www/blog/app/controllers/devise_controller.rb",
+		"/var/www/blog/app/assets/stylesheets/posts.css.scss",
+		"/var/www/blog/app/views/posts/index.html.erb",
+		"/var/www/blog/app/controllers/posts_controller.rb",
+		"/var/www/blog/app/views/posts/show.html.erb",
 		"/var/www/blog/app/views/posts/new.html.erb",
 		"/var/www/blog/db/migrate/20131014183941_create_categories_and_posts.rb.old",
 		"/var/www/blog/db/migrate/20131014171724_create_categories.rb.old",
 		"/var/www/blog/app/controllers/categories_controller.rb",
 		"/var/www/blog/app/models/category.rb",
-		"/var/www/blog/app/assets/stylesheets/posts.css.scss",
 		"/var/www/blog/app/views/layouts/_header.html.erb",
 		"/var/www/blog/app/views/kaminari/_paginator.html.erb",
 		"/var/www/blog/app/views/layouts/application.html.erb",
@@ -234,18 +328,12 @@
 		"/var/www/blog/app/views/kaminari/_last_page.html.erb",
 		"/var/www/blog/app/views/kaminari/_gap.html.erb",
 		"/var/www/blog/app/views/kaminari/_first_page.html.erb",
-		"/var/www/blog/app/assets/stylesheets/categories.css.scss",
-		"/var/www/blog/Gemfile",
 		"/var/www/blog/config/initializers/kaminari_config.rb",
-		"/var/www/blog/app/assets/stylesheets/style.css.scss",
 		"/var/www/blog/log/development.log",
 		"/var/www/blog/app/views/layouts/_categories.html.erb",
-		"/var/www/blog/app/assets/javascripts/application.js",
 		"/var/www/blog/blog.sublime-project",
 		"/var/www/blog/app/views/layouts/_footer.html.erb",
-		"/var/www/blog/app/assets/stylesheets/application.css",
 		"/var/www/blog/app/views/categories/index.html.erb",
-		"/var/www/blog/app/views/categories/show.html.erb",
 		"/var/www/blog/config/routes.rb",
 		"/var/www/blog/app/models/categories.rb",
 		"/var/www/blog/db/migrate/20131014204016_create_categories.rb",
@@ -295,6 +383,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"absolute",
+			"data",
+			"2",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"post",
+			"Post",
+			"static",
+			"absolute",
+			"msg",
+			"0",
+			"resource_name",
+			"h2",
+			"categories",
+			"h1",
+			"created",
+			"post",
+			"230",
+			"10px",
+			"p",
+			"undefined",
 			"name",
 			"post",
 			"title",
@@ -350,29 +471,30 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/categories/show.html.erb",
+					"file": "app/views/posts/show.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 773,
+						"buffer_size": 1806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								139,
-								139
+								773,
+								773
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -382,19 +504,76 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/assets/stylesheets/categories.css.scss",
-					"semi_transient": false,
+					"file": "app/views/layouts/mercury.html.erb",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1224,
+						"buffer_size": 815,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1220,
-								1220
+								782,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/comments/_form.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								188,
+								188
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/stylesheets/comments.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								735,
+								735
 							]
 						],
 						"settings":
@@ -408,20 +587,103 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/controllers/posts_controller.rb",
+					"buffer": 4,
+					"file": "app/assets/stylesheets/posts.css.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1637,
+						"buffer_size": 5878,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1515,
-								1515
+								2659,
+								2659
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1350.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/stylesheets/devise.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/posts/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1716,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1461,
+								1461
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 486.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/controllers/posts_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								608,
+								608
 							]
 						],
 						"settings":
@@ -430,26 +692,26 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 590.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 8,
 					"file": "app/assets/javascripts/mercury.js",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23930,
+						"buffer_size": 24389,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23766,
-								23828
+								24369,
+								24369
 							]
 						],
 						"settings":
@@ -459,64 +721,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7178.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/models/post.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 574,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53,
-								53
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/posts/_form.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								674,
-								674
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 10790.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -596,7 +801,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 197.0,
+	"side_bar_width": 196.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

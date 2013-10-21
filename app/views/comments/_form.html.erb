@@ -1,15 +1,20 @@
+<h3>Add a Comment:</h3>
 <div class="form-comment">
+	<div class="commenter-avatar">
+		<%= image_tag( 'noavatar.png' ) -%>
+	</div>
 	<%= form_for([@post, @post.comments.build]) do |f| %>
-		<div>
-			<%= f.label :commenter %><br>
-			<%= f.text_field :commenter %>
-		</div>
+		<%= f.hidden_field( :created, { :value => Date.today } ) -%>
 		<div class="textarea">
-			<%= f.label :body %><br>
-			<%= f.text_area :body %>
+			<%= f.text_area :body, { :placeholder => 'Leave a comment...', :rows => 1 } %>
+		</div>
+		<div class="commenter">
+			<%= link_to( 'Sign in', new_user_session_path(), { :class => 'btn btn-info' } ) -%>
+			<span>OR</span>
+			<%= f.text_field :commenter, { :placeholder => 'Enter a name' } %>
+			<%= f.submit( 'Comment', { :class => 'btn btn-inverse' } ) -%>
 		</div>
 		<div>
-			<%= f.submit %>
 		</div>
 	<% end %>
 </div>
