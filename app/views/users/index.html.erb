@@ -22,9 +22,9 @@
                     <td><%= user.email -%></td>
                     <td><%= role[ user.profile.role ] -%></td>
                     <td>
-                        <%= link_to( 'Edit', '#', { :class => 'btn btn-warning' } ) -%>
-                        <%= link_to( 'Profile', '#', { :class => 'btn btn-info' } ) -%>
-                        <%= link_to( 'Destroy', '#', { :class => 'btn btn-danger' } ) -%>
+                        <%= link_to( 'Edit', edit_user_path( user ), { :class => 'btn btn-warning' } ) -%>
+                        <%= link_to( 'Profile', user_profiles_path( user.login ), { :class => 'btn btn-info' } ) -%>
+                        <%= link_to( 'Destroy', '#', { :action => :delete, :confirm => 'Are you sure to want delete it?', :class => 'btn btn-danger' } ) -%>
                     </td>
                 </tr>
             <%- end -%>

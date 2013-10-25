@@ -25,4 +25,16 @@ class User < ActiveRecord::Base
       return( false ) if ( profile.nil? )
       return( profile.role == role.to_s )
     end
+
+    def to_param
+      return( login.gsub( ' ', '-' ) )
+  end
+
+  def self.find_by_params( params )
+      return( self.find_by_login( params[ :id ].gsub( '-', ' ' ) ) )
+  end
+
+  def self.find_by_params_profile( params )
+      return( self.find_by_login( params[ :user_id ].gsub( '-', ' ' ) ) )
+  end
 end
