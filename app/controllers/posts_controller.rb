@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 	def index
 		@categories = Categories.all
 		if !params[:q].nil?
-			@posts = Post.where("title LIKE '%#{params[:q]}%'").order("created DESC").pagination( params )
+			@posts = Post.where("title LIKE '%#{params[:q]}%'").order("created_at DESC").pagination( params )
 		else
-			@posts = Post.order('created DESC').pagination( params )
+			@posts = Post.order('created_at DESC').pagination( params )
 		end
 
 		respond_to do |format|
