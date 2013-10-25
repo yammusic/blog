@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
 	def index
 		@categories = Categories.all
-		if defined?(params[:q]) && !params[:q].nil?
+		if !params[:q].nil?
 			@posts = Post.where("title LIKE '%#{params[:q]}%'").order("created DESC").pagination( params )
 		else
 			@posts = Post.order('created DESC').pagination( params )

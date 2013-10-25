@@ -9,7 +9,7 @@
 </div>
 
 <section id="content">
-	<%- if @posts.size == 0 -%>
+	<%- if @posts.size == 0 && !params[:q].nil? -%>
 		<article>
 			<h1>Search Result <%= params[:q] -%></h1>
 			<p>No results were found. ¿Want to search again?</p>
