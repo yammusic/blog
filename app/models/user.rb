@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
+  has_one :profile
+
     def self.find_first_by_auth_conditions(warden_conditions)
         conditions = warden_conditions.dup
         if login = conditions.delete(:login)
@@ -16,5 +18,11 @@ class User < ActiveRecord::Base
         else
             where(conditions).first
         end
+    end
+
+    def role?( role )
+      profile = self.profile
+      return( false ) if ( profile.nil? )
+      return( profile.role == role.to_s )
     end
 end

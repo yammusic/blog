@@ -15,9 +15,7 @@
 //= require jquery.autosize
 //= require posts
 
-function linkHome() { location.href="/"; }
-
-$(document).trigger('initialize:frame');
+function linkHome() { window.location.href="/"; }
 
 function categories() {
     $("nav#categories").toggleClass('active');
@@ -32,16 +30,46 @@ function hideCategories() {
     }
 }
 
+function panelUser() {
+    $("section.panel-user").toggleClass('panel-active');
+    $("div.login").fadeToggle('fast');
+    return( false );
+}
+
+function hidePanelUser() {
+    if ($("section.panel-user").hasClass('panel-active')) {
+        $("section.panel-user").removeClass('panel-active');
+        $("div.login").fadeToggle('fast');
+    }
+}
+
 $(function() {
-	$("section#wrapper").click(function() {
-		hideCategories();
-	});
+    $("div.description-content").hide();
+    $("div.text-content strong").hide();
+    $("#info-save").hide();
+
+    $(document).scroll(function(e){
+        $('body').css('background-position', '-'+$(window).scrollTop()+'px 0');
+    });
+
+    $("header").click(function() {
+        hidePanelUser();        
+    });
+
+    $("section#wrapper").click(function() {
+        hideCategories();
+        hidePanelUser();
+    });
 
     $("footer").click(function() {
         hideCategories();
+        hidePanelUser();
     });
 
+    $("div.login").css('left', '-'+$("div.login").width()+'px');
+
     $('div.textarea textarea').autosize();
+    $('section.form-post textarea').autosize();
 
     $('div.textarea textarea').focus(function() {
         $('div.commenter').show('fast');

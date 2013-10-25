@@ -14,5 +14,6 @@
  *= require categories
  *= require posts
  *= require comments
+ *= require users
  *= require style
  */

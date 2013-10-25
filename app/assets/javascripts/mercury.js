@@ -106,9 +106,9 @@ window.Mercury = {
         insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['full', 'markdown'] }],
         //snippetPanel:          ['Snippet', 'Snippet Panel', { panel: '/mercury/panels/snippets.html' }],
         sep2:                  ' ',
-        historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
+        //historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
         sep3:                  ' ',
-        notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }]
+        //notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }]
         },
 
       editable: {
@@ -452,18 +452,31 @@ window.Mercury = {
 };
 
 $(window).bind('mercury:ready', function() {
-  var link = $('#mercury_iframe').contents().find('#edit_link');
+  contents = $('#mercury_iframe').contents();
+  contents.find('div.description-content').show();
+  contents.find('div.text-content strong').show();
+  contents.find('#info-save').show();
+  contents.find('#share_post').hide();
+
+  window.onbeforeunload = confirmExit;
+
+  function confirmExit() {
+      return( "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost." );
+  }
+
+  var link = contents.find('#edit_link');
   if (link.data('save-url') != undefined) Mercury.saveURL = link.data('save-url');
   link.hide();
 
   Mercury.on('saved', function() {
-    var $alert = $('#mercury_iframe').contents().find("div#alert");
+    var $alert = contents.find("div#alert");
         var $msg = arguments[1].msg;
         var $url = arguments[1].url;
       $alert.show("fast", function() {
         $(this).children('p.content').empty().html($msg);
       });
       $alert.children("a#ok-alert").click(function(event) {
+        window.onbeforeunload = false;
         event.preventDefault();
         $alert.hide("fast");
         window.location.href = $url;

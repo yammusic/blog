@@ -7,7 +7,7 @@
 		<%= image_tag( 'banner.jpg' ) -%>
 	</div>
 </div>
-<%= current_user.inspect -%>
+
 <section id="content">
 	<%- if @posts.size == 0 -%>
 		<article>
@@ -34,10 +34,12 @@
 				</aside>
 				<div class="content">
 					<h1><%= link_to( post.title, post_path(post) ) -%></a></h1>
-					<p><%= raw( post.text ) -%></p>
+					<p><%= raw( post.description ) -%></p>
 					<ul class="actions">
 						<li><%= link_to( 'Read More', post_path(post) ) -%></li>
-						<li><%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
+						<%- if user_signed_in? -%>
+							<li><%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
+						<%- end -%>
 					</ul>
 				</div>
 			</article>
@@ -46,10 +48,12 @@
 
 		<%= paginate @posts -%>
 
-		<%- if !defined?(params[:q]) || params[:q].nil? -%>
-			<div class="action-new">
-				<%= link_to( 'New post', new_post_path ) -%>
-			</div>
+		<%- if can? :create, @posts -%>
+			<%- if !defined?(params[:q]) || params[:q].nil? -%>
+				<div class="action-new">
+					<%= link_to( 'New post', new_post_path ) -%>
+				</div>
+			<%- end -%>
 		<%- end -%>
 	<%- end -%>
 </section>

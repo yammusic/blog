@@ -2,11 +2,29 @@
 	<article class="post">
 		<div class="content-post">
 			<h1 data-mercury="simple" id="title"><%= @post.title -%></h1>
-			<p class="info"><span class="written">Written by <%= @post.author -%></span> | <span class="published">Published <%= @post.created -%></span></p>
-			<div class="text-content" id="text" data-mercury="full"><%= raw( @post.text ) -%></div>
+			<p class="info">
+				<span class="written">Written by <%= @post.author -%></span>
+				|
+				<span class="published">Published <%= @post.created -%></span>
+			</p><br>
+			<div class="description-content" id="description" data-mercuy="full">
+				<strong>Description Post</strong>
+				<div id="description" data-mercury="full">
+					<%= raw( @post.description ) -%>
+				</div>
+			</div>
+			<div class="text-content">
+				<strong class="content-post-title">Content Post</strong>
+				<div id="text" data-mercury="full">
+					<%= raw( @post.text ) -%>					
+				</div>
+			</div>
 			<ul>
-				<li><%= link_to( 'Share', '#' ) -%></li>
-				<li><%= link_to( 'Edit Post', '/editor' + request.path, { :id => 'edit_link', :data => { :save_url => mercury_update_post_path(@post) } } ) -%></li>
+				<strong id="info-save">To save, click save on the top bar</strong>
+				<li><%= link_to( 'Share', '#', { :id => 'share_post' } ) -%></li>
+				<%- if can? :update, @post -%>
+					<li><%= link_to( 'Edit Post', mercury_editor_path( request.path ), { :id => 'edit_link', :data => { :save_url => post_path(@post) } } ) -%></li>
+				<%- end -%>
 			</ul>
 			<hr>
 			<div class="tags">

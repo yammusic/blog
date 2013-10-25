@@ -1,7 +1,7 @@
 <header>
 	<nav>
-		<figure id="blog-icon" title="Go to Home" onclick="linkHome()">
-			<%= image_tag( 'Blog-Icon.png', { :class => 'blogIcon' } ) -%>
+		<figure id="blog-icon" title="Go to Home">
+			<%= link_to( image_tag( 'Blog-Icon.png', { :class => 'blogIcon' } ), root_path ) -%>
 		</figure>
 		<ul>
 		<%- Menu.all.each do |menu| -%>
@@ -14,3 +14,22 @@
 		<%- end -%>
 	</nav>
 </header>
+
+<section class="panel-user">
+	<div class="login">
+		<%- if user_signed_in? -%>
+			<%= link_to( current_user.login, user_profiles_path(current_user), { :onclick => 'return(panelUser())' } ) -%>
+		<%- else -%>
+			<%= link_to( 'Sign in', new_user_session_path ) -%>
+		<%- end -%>
+	</div>
+	<%- if user_signed_in? -%>
+		<div class="panel">
+			<p>avatar</p>
+			<p><%= current_user.login -%></p>
+			<p><%= current_user.email -%></p>
+			<%= link_to( 'View Profile', user_profiles_path(current_user), { :class => 'btn btn-info' } ) -%>
+			<%= link_to( 'Sign out', destroy_user_session_path, { :method => :delete, :class => 'btn btn-danger' } ) -%>
+		</div>
+	<%- end -%>
+</section>

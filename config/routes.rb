@@ -1,11 +1,20 @@
 Blog::Application.routes.draw do
-  devise_for :users
+  get "users/index"
+
+  get "profiles/index"
+
+  devise_for :users 
+
+  resources :users do
+    resources :profiles
+  end
 
     namespace :mercury do
       resources :images
     end
 
   mount Mercury::Engine => '/'
+  get '/editor(*requested_uri)(.:format)', :to => 'mercury#edit', :as => 'mercury_editor'
 
   resources :posts do
     resources :comments, :tags
@@ -13,7 +22,6 @@ Blog::Application.routes.draw do
   end
 
   resources :categories
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

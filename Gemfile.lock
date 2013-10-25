@@ -45,6 +45,11 @@ GEM
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
     builder (3.0.4)
+    cancan (1.6.10)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.2)
@@ -111,6 +116,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rmagick (2.13.2)
     sass (3.2.11)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -144,6 +150,8 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   autosize-rails (~> 1.16.7)
+  cancan
+  carrierwave
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails (~> 2.0.1)
@@ -151,6 +159,7 @@ DEPENDENCIES
   mercury-rails!
   paperclip
   rails (= 3.2.13)
+  rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

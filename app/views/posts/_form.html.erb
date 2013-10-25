@@ -1,5 +1,4 @@
-<%- url = ( ( @post.new_record? ) ? posts_path : post_path( @post ) ) -%>
-<%= form_for @post, { :url => url } do |f| -%>
+<%= form_for @post, { :url => posts_path } do |f| -%>
 
 	<%- if @post.errors.any? -%>
 		<div id="errorExplanation">
@@ -13,23 +12,26 @@
 	<%- end -%>
 
 	<%= f.hidden_field( :created, { :value => Date.today } ) -%>
+	<%= f.hidden_field( :author, { :value => current_user.login } ) -%>
+	<%= f.hidden_field( :text, { :value => 'Edit content for you post' } ) -%>
 
 	<div>
-		<%= f.label :title -%>
+		<%= f.label :title, 'Title Post' -%><br>
 		<%= f.text_field :title -%>
-	</div><br>
+	</div>
 
 	<div>
-		<%= f.label :author -%>
-		<%= f.text_field :author -%>
-	</div><br>
+		<%= f.label :description -%><br>
+		<%= f.text_area :description, { :rows => 1, :cols => 40 } -%>
+	</div>
+
+	<%- f.fields_for :categories do |category| -%>
+		<div>
+			<%= category -%>
+		</div>
+	<%- end -%>
 
 	<div>
-		<%= f.label :text -%>
-		<%= f.text_area :text -%>
-	</div><br>
-
-	<div>
-		<%= f.submit -%>
+		<%= f.submit 'Next', { :class => 'btn btn-info' } -%>
 	</div>
 <%- end -%>

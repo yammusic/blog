@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021212529) do
+ActiveRecord::Schema.define(:version => 20131023162422) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -47,12 +47,27 @@ ActiveRecord::Schema.define(:version => 20131021212529) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "author"
     t.date     "created"
     t.date     "edited"
+    t.string   "description"
   end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "avatar"
+    t.string   "role"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "born"
+    t.integer  "sex"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
   create_table "tags", :force => true do |t|
     t.string   "name"

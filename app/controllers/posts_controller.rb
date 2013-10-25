@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+	# load_resource :only => [:edit, :new, :create, :update, :destroy]
+    skip_authorize_resource :only => [ :index, :show ]
+
 	def index
 		@categories = Categories.all
 		if defined?(params[:q]) && !params[:q].nil?
@@ -22,7 +25,7 @@ class PostsController < ApplicationController
 		@post = Post.new(params[:post])
 
 		if @post.save
-			redirect_to( @post )
+			redirect_to( mercury_editor_path( post_path( @post ) ) )
 		else
 			render( 'new' )
 		end
@@ -30,18 +33,27 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find_by_params( params )
-		@tag = Tag.new
+
+		if ( !params[ :mercury_frame ].nil? )
+			authorize! :edit, @post
+		else
+			@tag = Tag.new
+		end
 	end
 
 	def edit
-		@post = Post.find_by_title(params[:id])
+		@post = Post.find_by_params( params )
 	end
 
 	def update
 		@post = Post.find_by_params( params )
 
 		if ( !params[ :content ].nil? )
-			params[ :post ] = { :title => params[ :content ][ :title ][ :value ], :text => params[ :content ][ :text ][ :value ] }
+			params[ :post ] = { 
+				:title => params[ :content ][ :title ][ :value ],
+				:description => params[ :content ][ :description ][ :value ],
+				:text => params[ :content ][ :text ][ :value ]
+			}
 		end
 
 		if ( @post.update_attributes( params[ :post ] ) )
