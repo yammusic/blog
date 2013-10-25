@@ -22,7 +22,7 @@ gem "autosize-rails", "~> 1.16.7"
 gem "cancan"
 
 gem "carrierwave"
-gem "rmagick"
+gem "rmagick", :require => 'RMagick'
 
 # Gems used only for assets and not required
 # in production environments by default.
