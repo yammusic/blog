@@ -3,7 +3,6 @@
 <head>
   <title>Blog</title>
   <%= favicon_link_tag 'favicon.png' -%>
-  <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
@@ -20,8 +19,7 @@
 
       <%= render( { :partial => 'layouts/footer' } ) -%>
     </section>
-
+  <%= javascript_include_tag "application" %>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
-<script>document.write('<script src="http://' + (location.host || 'localhost')
-.split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </html>
