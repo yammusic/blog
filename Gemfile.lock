@@ -84,7 +84,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     multi_json (1.8.0)
-    mysql2 (0.3.13)
     orm_adapter (0.4.0)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
@@ -157,7 +156,6 @@ DEPENDENCIES
   jquery-rails (~> 2.0.1)
   kaminari
   mercury-rails!
-  mysql2
   paperclip
   pg
   rails (= 3.2.13)
