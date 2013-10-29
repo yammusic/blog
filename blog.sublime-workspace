@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"form	<form>"
+			],
+			[
 				"para",
 				"params"
 			],
@@ -256,18 +260,10 @@
 			}
 		},
 		{
-			"file": "config/database.yml.b2",
+			"file": "config/database.yml.bmysql",
 			"settings":
 			{
 				"buffer_size": 1004,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/database.yml",
-			"settings":
-			{
-				"buffer_size": 1501,
 				"line_ending": "Unix"
 			}
 		},
@@ -315,20 +311,24 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 306.0,
 		"selected_items":
 		[
 			[
-				"renam",
-				"File: Rename"
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
 			],
 			[
 				"rena",
 				"File: Rename"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
+				"renam",
+				"File: Rename"
 			],
 			[
 				"isnta",
@@ -403,7 +403,7 @@
 				"Set Syntax: HTML (Rails)"
 			]
 		],
-		"width": 449.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -424,6 +424,7 @@
 	},
 	"file_history":
 	[
+		"/var/www/blog/config/database.yml",
 		"/var/www/blog/app/views/profiles/index.html.erb",
 		"/var/www/blog/app/uploaders/avatar_uploader.rb",
 		"/var/www/blog/app/models/user.rb",
@@ -679,7 +680,7 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -862,24 +863,26 @@
 						"selection":
 						[
 							[
-								180,
-								180
+								1061,
+								1061
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "config/database.yml.b2",
-					"semi_transient": false,
+					"file": "config/database.yml.bmysql",
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 1004,
@@ -889,13 +892,13 @@
 						"selection":
 						[
 							[
-								917,
-								917
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -907,35 +910,6 @@
 				},
 				{
 					"buffer": 8,
-					"file": "config/database.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1501,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1345,
-								1345
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 395.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
 					"file": "app/views/layouts/application.html.erb",
 					"semi_transient": false,
 					"settings":
@@ -964,7 +938,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "app/views/users/index.html.erb",
 					"semi_transient": false,
 					"settings":
@@ -976,8 +950,8 @@
 						"selection":
 						[
 							[
-								444,
-								444
+								126,
+								126
 							]
 						],
 						"settings":
@@ -991,7 +965,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "app/controllers/posts_controller.rb",
 					"semi_transient": false,
 					"settings":
@@ -1003,8 +977,8 @@
 						"selection":
 						[
 							[
-								376,
-								376
+								512,
+								512
 							]
 						],
 						"settings":
@@ -1013,13 +987,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 607.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "app/assets/stylesheets/users.css.scss",
 					"semi_transient": false,
 					"settings":
@@ -1048,7 +1022,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 12,
 					"file": "app/models/post.rb",
 					"semi_transient": false,
 					"settings":
