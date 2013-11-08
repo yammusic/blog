@@ -1,0 +1,2 @@
+alert( "Hello World <%= @user.login -%>!" );
+alert( "El Template es : <%= escape_javascript( render( { :partial => 'profiles/avatar', :locals => { :user => @user } } ) ) -%>" );

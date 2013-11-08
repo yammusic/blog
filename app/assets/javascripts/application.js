@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.autosize
 //= require posts
+//= require profiles
 
 function linkHome() { window.location.href="/"; }
 

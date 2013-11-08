@@ -1,0 +1,31 @@
+<h3>Social Networks Manage</h3>
+<hr style="margin-top: -30px; border-color: silver;">
+<div class="social-networks-info">
+    <div class="wrapper-social">
+        <%= image_tag( 'facebook-social-icon.png' ) -%>
+        <h4>Facebook Account</h4>
+        <div class="social-networks-content">
+            <%- if ( x = user.authentications.find_by_provider( 'facebook' ) ) -%>
+            <%= user.authentications.inspect -%>
+            <%- else -%>
+            <%= link_to( 'Connect with Facebook', '/auth/facebook', { :class => 'btn btn-info' } ) -%>
+            <%- end -%>
+        </div>
+    </div>
+    <hr>
+    <div class="wrapper-social">
+        <%= image_tag( 'twitter-social-icon.png' ) -%>
+        <h4>Twitter Account</h4>
+        <div class="social-networks-content">
+            <%- if ( auth = user.authentications.find_by_provider( 'twitter' ) ) -%>
+                <%= image_tag( auth.image.gsub( '_normal', '') ) -%>
+                <%= link_to( auth.nickname, auth.url, { :target => '_blank', :class => 'label label-info' } ) -%>
+                <span class="label label-success"><%= auth.name -%></span>
+                <%= link_to( 'Update', '#', { :class => 'btn btn-info' } ) -%>
+                <%= link_to( 'Remove', '#', { :class => 'btn btn-danger' } ) -%>
+            <%- else -%>
+                <%= link_to( 'Connect with Twitter', '/auth/twitter', { :class => 'btn btn-info' } ) -%>
+            <%- end -%>
+        </div>
+    </div>
+</div>

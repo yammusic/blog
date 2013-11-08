@@ -1,1 +1,49 @@
-<%= @profile.inspect.to_s -%>
+<%-
+  user_profile = @user.profile
+  role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin' }
+  profile_class = ( ( params[ :action ] == 'profile' || params[ :action ] == 'index' ) ? ' class="active-info"' : nil )
+  profile_style = ( ( profile_class.nil? ) ? ' style="display:none;"' : nil )
+  avatar_class = ( ( params[ :action ] == 'avatar' ) ? ' class="active-info"' : nil )
+  avatar_style = ( ( avatar_class.nil? ) ? ' style="display:none;"' : nil )
+  social_class = ( ( params[ :action ] == 'social' ) ? ' class="active-info"' : nil )
+  social_style = ( ( social_class.nil? ) ? ' style="display:none;"' : nil )
+  account_class =( ( params[ :action ] == 'account' ) ? ' class="active-info"' : nil )
+  account_style = ( ( account_class.nil? ) ? ' style="display:none;"' : nil )
+-%>
+<section id="wrapper-profile">
+    <section class="content-profile">
+        <div class="user-header">
+            <%= ( user_profile.avatar.blank? ) ? image_tag( 'noavatar.png' ) : image_tag( user_profile.avatar_url( :thumb_90 ) ) -%>
+            <span class="user-title"><%= @user.login -%></span>
+            <span class="user-role"><%= role[ user_profile.role ] -%></span>
+        </div>
+        <div class="separator"></div>
+        <div class="user-info">
+            <aside class="nav-info">
+                <ul>
+                    <li<%= raw( profile_class ) -%>><%= link_to( 'Profile', '#profile' ) -%></li>
+                    <li<%= raw( avatar_class ) -%>><%= link_to( 'Avatar', '#avatar' ) -%></li>
+                    <li<%= raw( social_class ) -%>><%= link_to( 'Social Networks', '#social-networks' ) -%></li>
+                    <li<%= raw( account_class ) -%>><%= link_to( 'Account', '#account' ) -%></li>
+                </ul>
+            </aside>
+            <div class="content-info">
+                <div id="profile"<%= raw( profile_style ) -%>>
+                    <%= render( { :partial => 'profiles/profile', :locals => { :user => @user } } ) -%>
+                </div>
+                <div id="avatar" <%= raw( avatar_style ) -%>>
+                    <%= render( { :partial => 'profiles/avatar', :locals => { :user => @user } } ) -%>
+                </div>
+                <div id="social-networks" <%= raw( social_style ) -%>>
+                    <%= render( { :partial => 'profiles/social_networks', :locals => { :user => @user } } ) -%>
+                </div>
+                <div id="account" <%= raw( account_style ) -%>>
+                    <%= render( { :partial => 'profiles/account', :locals => { :user => @user } } ) -%>
+                </div>
+            </div>
+            <div class="footer-info">
+                Blog's Games
+            </div>
+        </div>
+    </section>
+</section>

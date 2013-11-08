@@ -1,0 +1,65 @@
+<h3>Avatar Picture</h3>
+<hr style="margin-top: -30px; border-color: silver;">
+<div class="avatar-info">
+    <div class="avatar-icon">
+        <%= (user.profile.avatar.blank?) ? image_tag( 'noavatar.png' ) : image_tag( user.profile.avatar_url( :thumb_90 ) ) -%>
+    </div>
+    <%= form_for( user.profile, { :as => :user_profile, :url => update_avatar_user_profiles_path( user.profile ), :method => :put, :multipart => true } ) do |f| -%>
+    <div class="avatar-settings">
+        <ul>
+            <li>
+                <p>
+                    <input type="radio" id="avatar-computer" name="switch-avatar">
+                    <%= f.label( 'Upload a new picture from your computer', { :for => 'avatar-computer' } ) -%>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                    <%= f.file_field( :avatar, { :accept => 'image/*' } ) -%>
+                    <%= f.label( :avatar, 'Choose Image', { :class => 'btn btn-info' } ) -%>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <input type="radio" id="avatar-url" name="switch-avatar">
+                    <label for="avatar-url">Upload a new picture from the web</label>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                    <%= f.url_field( :remote_avatar_url, { :placeholder => 'http:// Image URL' } ) -%>
+                    <%= button_tag( 'Preview', { :type => nil, :name => nil, :class => 'btn btn-info preview' } ) -%>
+                    <span class="label label-important alert-url" style="display:none;">Image isn't valid</span>
+                    <span class="label label-success alert-empty" style="display:none;">Put Image URL</span>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <input type="radio" id="avatar-facebook" name="switch-avatar" <%= raw( 'disabled' ) -%>>
+                    <label for="avatar-facebook"><%= image_tag( 'avatar-facebook.png' ) -%> Use your Facebook picture</label>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                    Facebook option here
+                </div>
+            </li>
+            <li>
+                <p>
+                    <input type="radio" id="avatar-twitter" name="switch-avatar" <%= raw( 'disabled' ) -%>>
+                    <label for="avatar-twitter"><%= image_tag( 'avatar-twitter.png' ) -%> Use your Twitter picture</label>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                    Twitter option here
+                </div>
+            </li>
+            <li>
+                <p>
+                    <input type="radio" id="avatar-default" name="switch-avatar">
+                    <label for="avatar-default"><%= image_tag( 'noavatar.png', { :size => '32x32' } ) -%> Use the default picture</label>
+                    <div class="option-avatar" style="display:none;">
+                        <%= f.hidden_field( :remove_avatar, { :value => true } ) -%>
+                    </div>
+                </p>
+            </li>
+        </ul>
+        <div class="avatar-actions" style="display: none;">
+            <%= f.submit( 'Save Avatar', { :class => 'btn btn-inverse save-avatar' } ) -%>
+        </div>
+    </div>
+    <%- end -%>
+</div>

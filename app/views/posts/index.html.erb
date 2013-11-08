@@ -47,13 +47,5 @@
 		<%- end -%>
 
 		<%= paginate @posts -%>
-
-		<%- if can? :create, @posts -%>
-			<%- if !defined?(params[:q]) || params[:q].nil? -%>
-				<div class="action-new">
-					<%= link_to( 'New post', new_post_path ) -%>
-				</div>
-			<%- end -%>
-		<%- end -%>
 	<%- end -%>
 </section>

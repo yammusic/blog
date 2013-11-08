@@ -4,16 +4,320 @@
 		"selected_items":
 		[
 			[
+				"marg",
+				"margin"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"erro",
+				"error_reporting"
+			],
+			[
+				"met",
+				"method	Attr"
+			],
+			[
+				"sele",
+				"select_user"
+			],
+			[
+				"In",
+				"insert_user"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"inc",
+				"incl	include …"
+			],
+			[
+				"ins",
+				"insert_user"
+			],
+			[
+				"num",
+				"number_document"
+			],
+			[
+				"ty",
+				"type_user"
+			],
+			[
+				"find",
+				"find_user"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"typ",
+				"type_document"
+			],
+			[
+				"type",
+				"type_user"
+			],
+			[
+				"utf",
+				"utf8_decode"
+			],
+			[
+				"error_r",
+				"error_register"
+			],
+			[
+				"er",
+				"error_register"
+			],
+			[
+				"re",
+				"repeat_password"
+			],
+			[
+				"pa",
+				"password"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"req",
+				"req1	require_once …"
+			],
+			[
+				"L",
+				"link"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"db",
+				"db_name"
+			],
+			[
+				"db_",
+				"db_user"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pos",
+				"pos:r	position:relative"
+			],
+			[
+				"style",
+				"list-style"
+			],
+			[
+				"impo",
+				"important"
+			],
+			[
+				"border",
+				"border-color"
+			],
+			[
+				"avatar",
+				"avatar_style"
+			],
+			[
+				"ce",
+				"center"
+			],
+			[
+				"update",
+				"update_avatar"
+			],
+			[
+				"alert",
+				"alertEmpty"
+			],
+			[
+				"file",
+				"fileAvatar"
+			],
+			[
+				"inp",
+				"inputFile"
+			],
+			[
+				"data",
+				"dataAvatar"
+			],
+			[
+				"ava",
+				"avatarIcon"
+			],
+			[
+				"aler",
+				"alert"
+			],
+			[
+				"up",
+				"uploadAvatar"
+			],
+			[
+				"sav",
+				"saveAvatar"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"tran",
+				"transparent"
+			],
+			[
+				"tra",
+				"transparent"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"button",
+				"button_tag"
+			],
+			[
+				"new",
+				"newSrc"
+			],
+			[
+				"defa",
+				"defaultImageAvatar"
+			],
+			[
+				"is",
+				"is	is"
+			],
+			[
+				"input",
+				"inputUrl"
+			],
+			[
+				"aut",
+				"authentications"
+			],
+			[
+				"prev",
+				"previewImage"
+			],
+			[
+				"avata",
+				"avatar-icon"
+			],
+			[
+				"remo",
+				"removeAttr	.removeAttr()"
+			],
+			[
+				"op",
+				"option-avatar"
+			],
+			[
+				"eac",
+				"each	.each()"
+			],
+			[
+				"out",
+				"outline"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"slide",
+				"slideDown	.slideDown()"
+			],
+			[
+				"remov",
+				"removeClass	.removeClass"
+			],
+			[
+				"has",
+				"hasClass	.hasClass"
+			],
+			[
+				"bot",
+				"bottom"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"add",
+				"addClass	addClass"
+			],
+			[
+				"rgba",
+				"rgba()"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"bo",
+				"both"
+			],
+			[
+				"avat",
+				"avatar"
+			],
+			[
+				"user",
+				"user_profile"
+			],
+			[
+				"btn",
+				"btn-users"
+			],
+			[
 				"for",
 				"form	<form>"
 			],
 			[
 				"para",
 				"params"
-			],
-			[
-				"mar",
-				"margin-top"
 			],
 			[
 				"bac",
@@ -36,10 +340,6 @@
 				"opacity"
 			],
 			[
-				"tex",
-				"text-align"
-			],
-			[
 				"opa",
 				"opacity"
 			],
@@ -48,24 +348,8 @@
 				"post_path"
 			],
 			[
-				"pa",
-				"padding"
-			],
-			[
-				"pos",
-				"posts_path"
-			],
-			[
-				"pad",
-				"padding-top"
-			],
-			[
 				"no",
 				"no-repeat"
-			],
-			[
-				"rg",
-				"rgba	rgba()"
 			],
 			[
 				"hide",
@@ -78,10 +362,6 @@
 			[
 				"to",
 				"toggleClass"
-			],
-			[
-				"out",
-				"out_path"
 			],
 			[
 				"name",
@@ -116,14 +396,6 @@
 				"empty"
 			],
 			[
-				"margin",
-				"margin"
-			],
-			[
-				"req",
-				"required"
-			],
-			[
 				"post",
 				"post_path"
 			],
@@ -136,10 +408,6 @@
 				"opacity"
 			],
 			[
-				"op",
-				"opacify	opacify"
-			],
-			[
 				"rgb",
 				"rgba()"
 			],
@@ -148,24 +416,12 @@
 				"list-style"
 			],
 			[
-				"marg",
-				"margin"
-			],
-			[
 				"lef",
 				"left"
 			],
 			[
 				"find_",
 				"find_by_title"
-			],
-			[
-				"add",
-				"addClass"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"sty",
@@ -184,10 +440,6 @@
 				"display"
 			],
 			[
-				"re",
-				"relative"
-			],
-			[
 				"abs",
 				"absolute"
 			],
@@ -204,106 +456,27 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/profiles_controller.rb",
+			"contents": "./ngrok -authtoken inxgTnzkNm_NHJXJk-9d -subdomain=blog-s-games 3000",
 			"settings":
 			{
-				"buffer_size": 215,
+				"buffer_size": 68,
+				"line_ending": "Unix",
+				"name": "./ngrok -authtoken inxgTnzkNm_NHJXJk-9d -subdomain"
+			}
+		},
+		{
+			"file": "app/views/profiles/_social_networks.html.erb",
+			"settings":
+			{
+				"buffer_size": 699,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/users_controller.rb",
+			"file": "app/assets/stylesheets/profiles.css.scss",
 			"settings":
 			{
-				"buffer_size": 396,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 1299,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/ability.rb",
-			"settings":
-			{
-				"buffer_size": 1299,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/posts/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 1859,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/users/edit.html.erb",
-			"settings":
-			{
-				"buffer_size": 26,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 1061,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/database.yml.bmysql",
-			"settings":
-			{
-				"buffer_size": 1004,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 706,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/users/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 1384,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/posts_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1751,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/users.css.scss",
-			"settings":
-			{
-				"buffer_size": 772,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/post.rb",
-			"settings":
-			{
-				"buffer_size": 855,
+				"buffer_size": 8378,
 				"line_ending": "Unix"
 			}
 		}
@@ -311,36 +484,92 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 306.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
-				"Package Control: ",
-				"Package Control: Install Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
+				"ena",
+				"LiveReload: Enable/disable plug-ins"
 			],
 			[
 				"rena",
 				"File: Rename"
 			],
 			[
-				"renam",
-				"File: Rename"
+				"cop",
+				"File: Copy Path as URI"
 			],
 			[
-				"isnta",
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
-				"ena",
-				"LiveReload: Enable/disable plug-ins"
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
 			],
 			[
 				"dele",
 				"File: Delete"
+			],
+			[
+				"dle",
+				"File: Delete"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"synhtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"synt",
+				"Set Syntax: HTML5"
+			],
+			[
+				"syphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"syja",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"syj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sy jq",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"sy co",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"renam",
+				"File: Rename"
+			],
+			[
+				"rea",
+				"File: Rename"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
 			],
 			[
 				"delete",
@@ -349,10 +578,6 @@
 			[
 				"dlee",
 				"File: Delete"
-			],
-			[
-				"syj",
-				"Set Syntax: JavaScript"
 			],
 			[
 				"ins",
@@ -365,10 +590,6 @@
 			[
 				"enable",
 				"LiveReload: Enable/disable plug-ins"
-			],
-			[
-				"list",
-				"Package Control: List Packages"
 			],
 			[
 				"de",
@@ -391,10 +612,6 @@
 				"Set Syntax: HTML5"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"pack",
 				"Package Control: Install Package"
 			],
@@ -403,7 +620,7 @@
 				"Set Syntax: HTML (Rails)"
 			]
 		],
-		"width": 530.0
+		"width": 521.0
 	},
 	"console":
 	{
@@ -424,34 +641,91 @@
 	},
 	"file_history":
 	[
-		"/var/www/blog/config/database.yml",
-		"/var/www/blog/app/views/profiles/index.html.erb",
-		"/var/www/blog/app/uploaders/avatar_uploader.rb",
-		"/var/www/blog/app/models/user.rb",
-		"/var/www/blog/app/models/profile.rb",
-		"/var/www/blog/app/views/layouts/_header.html.erb",
-		"/var/www/blog/app/assets/stylesheets/style.css.scss",
-		"/var/www/blog/app/assets/stylesheets/users.css.scss",
-		"/usr/share/gnome-shell/theme/gnome-shell.css",
-		"/var/www/blog/Gemfile",
-		"/var/www/blog/app/assets/stylesheets/application.css",
-		"/var/www/blog/app/views/users/index.html.erb",
-		"/var/www/blog/app/views/users/show.html.erb",
-		"/var/www/blog/config/routes.rb",
-		"/var/www/blog/app/assets/javascripts/application.js",
-		"/var/www/blog/app/controllers/application_controller.rb",
-		"/var/www/blog/log/development.log",
+		"/var/www/glendel_tolima/index.php",
+		"/var/www/glendel_tolima/css/default.css",
+		"/var/www/glendel_tolima/config.php",
+		"/var/www/glendel_tolima/login.php",
+		"/var/www/glendel_tolima/login_controller.php",
+		"/var/www/glendel_tolima/registro.php",
+		"/var/www/glendel_tolima/registro_controller.php",
+		"/var/www/glendel_tolima/notas.php",
+		"/var/www/glendel_tolima/menu.php",
+		"/var/www/glendel_tolima/notas_controller.php",
+		"/var/www/glendel_tolima/logout.php",
+		"/var/www/blog/app/views/profiles/_social_networks.html.erb",
 		"/var/www/blog/app/controllers/profiles_controller.rb",
+		"/var/www/blog/config/routes.rb",
+		"/var/www/blog/app/assets/javascripts/profiles.js",
+		"/var/www/blog/app/assets/stylesheets/profiles.css.scss",
+		"/etc/php5/apache2/php.ini",
+		"/var/www/blog/app/views/profiles/_avatar.html.erb",
+		"/var/www/blog/app/views/profiles/index.html.erb",
+		"/var/www/blog/app/views/profiles/_profile.html.erb",
+		"/var/www/blog/app/models/profile.rb",
+		"/var/www/blog/app/models/user.rb",
+		"/home/wss1/registro.php",
+		"/var/www/blog/log/development.log",
+		"/var/www/clientbox/app/views/clients/_form.html.erb",
+		"/var/www/blog/app/uploaders/avatar_uploader.rb",
+		"/var/www/blog/config/environment.rb.b2",
+		"/var/www/blog/lib/gravatar.rb",
+		"/var/www/blog/config/environment.rb",
+		"/var/www/blog/db/migrate/20131106193756_add_remote_avatar_url_to_profiles.rb",
+		"/var/www/blog/db/migrate/20131106201024_remove_remote_avatar_url_from_profiles.rb",
+		"/var/www/blog/lib/uri_validator.rb",
+		"/var/www/blog/app/views/profiles/avatar.html.erb",
+		"/var/www/universidad/form_event.html",
+		"/var/www/universidad/form_estud.html",
+		"/var/www/universidad/form_docent.html",
+		"/var/www/universidad/css/default.css",
+		"/var/www/universidad/js/main.js",
+		"/var/www/universidad/menu.html",
+		"/media/A Bootable USB_/universidad/form_estud.html",
+		"/media/A Bootable USB_/universidad/menu.html",
+		"/var/www/blog/app/models/post.rb",
+		"/var/www/blog/app/controllers/posts_controller.rb",
+		"/var/www/blog/app/models/ability.rb",
+		"/var/www/blog/app/controllers/authentications_controller.rb",
+		"/var/www/blog/app/assets/stylesheets/application.css",
+		"/var/www/blog/app/assets/stylesheets/style.css.scss",
+		"/var/www/blog/config/application.rb",
+		"/var/www/blog/app/assets/stylesheets/metro-bootstrap.css",
+		"/var/www/blog/app/views/users/index.html.erb",
+		"/var/www/tests/testing_headers.php",
+		"/var/www/tests/testing_headers2.php",
+		"/var/www/tests/testing_headers3.php",
+		"/var/www/blog/app/models/authentication.rb",
+		"/var/www/blog/app/controllers/users_controller.rb",
+		"/var/www/blog/Gemfile",
+		"/var/www/blog/config/initializers/omniauth.rb",
+		"/home/wss1/.bashrc",
+		"/home/wss1/.bashrc~",
+		"/home/wss1/.ssh/known_hosts",
+		"/home/wss1/.ssh/ssh-add id_rsa",
+		"/home/wss1/.ssh/ssh-add id_rsa.pub",
+		"/var/www/blog/app/views/profiles/index.js.erb",
+		"/var/www/blog/app/views/profiles/index.xml.erb",
+		"/var/www/testing_headers.html",
+		"/var/www/testing_headers.php",
+		"/var/www/blog/app/assets/stylesheets/users.css.scss",
+		"/var/www/blog/app/controllers/application_controller.rb",
+		"/var/www/blog/app/views/layouts/application.html.erb",
+		"/var/www/blog/app/views/layouts/_header.html.erb",
+		"/var/www/blog/app/views/profiles/_account.html.erb",
+		"/var/www/blog/app/assets/javascripts/application.js",
+		"/var/www/blog/app/views/posts/index.html.erb",
+		"/var/www/blog/app/views/users/edit.html.erb",
+		"/var/www/blog/app/views/users/_form.html.erb",
+		"/var/www/blog/config/database.yml",
+		"/usr/share/gnome-shell/theme/gnome-shell.css",
+		"/var/www/blog/app/views/users/show.html.erb",
 		"/var/www/blog/app/views/posts/show.html.erb",
 		"/var/www/blog/app/assets/javascripts/mercury.js",
 		"/var/www/blog/app/views/posts/new.html.erb",
 		"/var/www/blog/app/assets/stylesheets/posts.css.scss",
 		"/var/www/blog/app/views/posts/_form.html.erb",
-		"/var/www/blog/app/views/posts/index.html.erb",
-		"/var/www/blog/app/views/layouts/application.html.erb",
 		"/var/www/blog/app/models/categories.rb",
 		"/var/www/blog/app/views/layouts/mercury.html.erb",
-		"/var/www/blog/config/environment.rb",
 		"/var/www/blog/app/assets/stylesheets/comments.css.scss",
 		"/var/www/blog/app/models/comment.rb",
 		"/var/www/blog/config/initializers/devise.rb",
@@ -472,10 +746,8 @@
 		"/var/www/blog/app/assets/javascripts/autosize.js",
 		"/var/www/blog/app/views/categories/show.html.erb",
 		"/var/www/blog/app/assets/stylesheets/categories.css.scss",
-		"/var/www/blog/app/models/post.rb",
 		"/var/www/blog/app/views/devise/passwords/new.html.erb",
 		"/var/www/blog/app/controllers/devise_controller.rb",
-		"/var/www/blog/app/controllers/posts_controller.rb",
 		"/var/www/blog/db/migrate/20131014183941_create_categories_and_posts.rb.old",
 		"/var/www/blog/db/migrate/20131014171724_create_categories.rb.old",
 		"/var/www/blog/app/controllers/categories_controller.rb",
@@ -496,31 +768,7 @@
 		"/var/www/blog/db/migrate/20131014204016_create_categories.rb",
 		"/var/www/blog/db/schema.rb",
 		"/var/www/blog/db/migrate/20131014183945_create_categories_and_posts.rb",
-		"/var/www/blog/app/views/posts/edit.html.erb",
-		"/var/www/blog/app/views/tags/edit.html.erb",
-		"/var/www/blog/app/views/tags/index.html.erb",
-		"/var/www/blog/app/views/posts/_test.html.erb",
-		"/var/www/blog/app/views/tags/_form_edit.html.erb",
-		"/var/www/blog/app/views/tags/_form_new.html.erb",
-		"/var/www/blog/app/helpers/application_helper.rb",
-		"/var/www/blog/db/migrate/20131001170911_create_posts.rb",
-		"/var/www/blog/db/migrate/20131014171724_create_categories.rb",
-		"/var/www/blog/db/migrate/20131014183941_create_categories_and_posts.rb",
-		"/var/www/blog/db/migrate/20131014190418_remove_post_id_to_categories.rb",
-		"/var/www/blog/db/migrate/20131014190124_remove_categories_to_posts.rb",
-		"/var/www/blog/db/migrate/20131014173451_add_categories_ref_to_posts.rb",
-		"/var/www/blog/app/views/layouts/test.html.erb",
-		"/home/wss1/.config/sublime-text-3/Packages/SideBarEnhancements/CHANGELOG",
-		"/var/www/blog/db/migrate/20131014173115_add_categories_to_post.rb",
-		"/var/www/blog/db/migrate/20131014172454_add_categories_to_posts.rb",
-		"/home/wss1/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/wss1/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/wss1/.config/sublime-text-3/Packages/AdvancedNewFile/Default (Linux).sublime-keymap",
-		"/home/wss1/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/wss1/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/wss1/.config/sublime-text-3/Packages/User/%=.sublime-snippet",
-		"/home/wss1/.config/sublime-text-3/Packages/User/%.sublime-snippet",
-		"/home/wss1/.ssh/ssh-add id_rsa.pub"
+		"/var/www/blog/app/views/posts/edit.html.erb"
 	],
 	"find":
 	{
@@ -539,130 +787,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"pg",
-			"generated",
-			"mysql2",
-			"mysql",
-			"mysql_development",
-			"sqlite3",
-			"Post",
-			"login",
-			"i",
-			"th",
-			"title",
+			"registro",
+			"USER",
+			"users",
+			"];\n",
+			"number_document",
+			"type_document",
+			"type_user",
 			"danger",
-			"dash",
-			"border-rad",
-			"panel",
-			"favorite",
-			"bar",
+			"login",
+			"AGE",
+			"age",
+			"TELEPHONE",
+			"telephone",
+			" $",
+			"LOGIN",
+			"password",
+			"login",
+			"display_errors",
+			"($",
+			"find_user",
+			"true",
+			"\n        ",
+			"expression",
+			"condition",
+			"course",
+			"age",
+			"password",
+			"address",
+			"first_name",
+			"password",
+			"type_document",
+			"type_user",
+			"file",
+			"public",
+			"ClassName",
+			"Usuario",
+			"value",
+			"code",
+			"Codigo",
+			"code",
 			"black",
-			"255",
-			"content",
-			"comments",
-			"Avatar",
-			"></",
-			"index",
-			"; ",
-			"title",
-			"p",
-			"li",
-			"hide",
-			"description",
-			"author",
+			"Acudiente",
+			"guardian",
+			"Estudiante",
+			"estudent",
+			"Docente",
+			"teaching",
+			"Login",
+			"first_name",
 			"text",
-			"author",
-			"created",
-			"slow",
-			"faslowst",
-			"fslowast",
-			"18",
-			"email_field",
-			"span",
-			"email",
+			"first_name",
+			"Nombre",
 			"username",
-			"params",
-			"10",
-			"footer",
-			"2",
-			"relative",
-			"slow",
-			"fast",
-			"focus",
-			"\n    ",
-			"100",
-			"posts",
-			"absolute",
-			"data",
-			"2",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"post",
-			"Post",
-			"static",
-			"absolute",
-			"msg",
-			"0",
-			"resource_name",
-			"h2",
-			"categories",
-			"h1",
-			"created",
-			"post",
-			"230",
-			"10px",
-			"p",
-			"undefined",
-			"name",
-			"post",
-			"title",
-			"author",
-			"title",
-			"tag",
-			"title",
-			"slug",
-			"find_by_title",
-			"name",
-			"lightgray",
-			"white",
-			"span",
-			"absolute",
-			"; ",
-			"id",
-			"show",
-			"auto",
-			"transition",
-			"show",
-			"hide",
-			"');\n",
-			"absolute",
-			"header",
-			"action",
-			"cat",
-			"tag",
-			"secret",
-			"dhh",
-			"references",
+			"label",
+			"reset",
+			"ease",
+			"PADRE",
+			"ACUD",
+			"ESTUD",
+			"DOC",
+			"255",
+			"241",
+			"255",
+			"241",
+			"Limpiar",
+			"reset",
+			"guardian",
+			"estudent",
+			"teaching",
+			"Acudiente",
+			"guardian",
+			"Estudiante",
+			"estudent",
+			"Docente",
+			"teaching",
+			"Mañana",
+			"age",
+			"number",
+			"telephone",
+			"address",
+			"text",
+			"last_name",
+			"document",
+			"last_name",
+			"first_name",
 			"div",
-			"relative",
-			"nil",
-			"tab",
-			"ident",
-			"'",
-			"name",
-			"hello"
+			"course",
+			"Curso",
+			"Telefono",
+			"telephone",
+			"Direccion",
+			"address",
+			"Documento",
+			"document",
+			"Nombre",
+			"div",
+			"profile_style",
+			"profile_class",
+			"50px",
+			"twitter",
+			"facebook",
+			"Facebook",
+			"facebook",
+			"Admin",
+			"role",
+			"remote_avatar_url",
+			"success",
+			"avatar",
+			"b94a48",
+			"Telefono",
+			"telefono",
+			"libre",
+			"Casado",
+			"Bachiller",
+			"Primaria",
+			"primaria",
+			"telefono",
+			"Telefono",
+			"evento",
+			"80",
+			"input",
+			"apellido",
+			"Apellido",
+			"estudent",
+			"event",
+			"estudent",
+			"user",
+			"success"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -674,218 +926,21 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/profiles_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 215,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								215,
-								215
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/users_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 396,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								375,
-								375
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/user.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1299,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1214,
-								1214
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/ability.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1299,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								185,
-								185
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/posts/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1859,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								234,
-								234
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/users/edit.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26,
-								26
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "Gemfile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1061,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1061,
-								1061
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "config/database.yml.bmysql",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1004,
+						"buffer_size": 68,
 						"regions":
 						{
 						},
@@ -898,9 +953,52 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"BracketHighlighterBusy": false,
+							"auto_name": "./ngrok -authtoken inxgTnzkNm_NHJXJk-9d -subdomain",
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -909,109 +1007,73 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "app/views/layouts/application.html.erb",
+					"buffer": 1,
+					"file": "app/views/profiles/_social_networks.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 706,
+						"buffer_size": 699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								706,
-								706
+								368,
+								368
+							],
+							[
+								657,
+								657
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/views/users/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1384,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								126,
-								126
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/controllers/posts_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								512,
-								512
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 607.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "app/assets/stylesheets/users.css.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 772,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								623,
-								623
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1022,30 +1084,74 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "app/models/post.rb",
+					"buffer": 2,
+					"file": "app/assets/stylesheets/profiles.css.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 855,
+						"buffer_size": 8378,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								753,
-								753
+								7868,
+								7868
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2377.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1125,7 +1231,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 195.0,
+	"side_bar_width": 194.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

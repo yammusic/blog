@@ -1,4 +1,7 @@
 Blog::Application.routes.draw do
+
+  match '/auth/:provider/callback' => 'authentications#callback'
+
   get "users/index"
 
   get "profiles/index"
@@ -6,7 +9,14 @@ Blog::Application.routes.draw do
   devise_for :users 
 
   resources :users do
-    resources :profiles
+    resources :profiles do
+      collection do
+        get ':action'
+        put 'update_avatar'
+        get 'avatar', :to => 'profiles#avatar', :as => 'avatar'
+        get 'social', :to => 'profiles#social', :as => 'social'
+      end
+    end
   end
 
     namespace :mercury do
@@ -22,6 +32,7 @@ Blog::Application.routes.draw do
   end
 
   resources :categories
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

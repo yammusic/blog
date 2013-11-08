@@ -25,12 +25,13 @@
 	</div>
 	<%- if user_signed_in? -%>
 		<div class="panel">
-			<p>avatar</p>
+			<p><%= (current_user.profile.avatar_url.nil?) ? image_tag( 'noavatar.png' ) : image_tag( current_user.profile.avatar_url ) -%></p>
 			<p><%= current_user.login -%></p>
 			<p><%= current_user.email -%></p>
 			<%= link_to( 'View Profile', user_profiles_path(current_user), { :class => 'btn btn-info' } ) -%>
 			<%= link_to( 'Sign out', destroy_user_session_path, { :method => :delete, :class => 'btn btn-danger' } ) -%>
 			<%= link_to( 'Users', users_path, { :class => 'btn btn-warning btn-users' } ) if( can?( :manage, User ) ) -%>
+			<%= link_to( 'New post', new_post_path, { :class => 'btn btn-success btn-users' } ) if( can?( :manage, Post ) ) -%>
 		</div>
 	<%- end -%>
 </section>
