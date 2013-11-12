@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   # load_resource
-  skip_authorize_resource :only => [ :index, :update_avatar ]
+  skip_authorize_resource :only => [ :index, :update_avatar, :profile, :avatar, :social, :account ]
 
   def index
     @user = User.find_by_params_profile( params )

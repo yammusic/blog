@@ -4,6 +4,8 @@
 
 @mixin transition($time: .3s) { -webkit-transition: all $time; -moz-transition: all $time; -ms-transition: all $time; -o-transition: all $time; transition: all $time; }
 
+@mixin userSelect($select: none) { -moz-user-select: $select; -khtml-user-select: $select; -webkit-user-select: $select; user-select: $select; }
+
 section#wrapper-profile { padding-top: 65px;
 
     > section.content-profile { width: 70%; display: inline-block; border: 1px solid silver; border-radius: 10px;
@@ -126,7 +128,30 @@ div.content-info { margin-left: 25%; min-height: 200px; background: rgba(240,240
 
                 > h4 { display: inline-block; }
 
-                > div.social-networks-content { padding-top: 10px; }
+                > div.social-networks-content { padding-top: 10px;
+
+                    img { position: relative; width: 90px; height: 90px; float: left; left: 50%; margin-left: -150px; }
+
+                    div.provider-info { text-align: left; position: relative; left: 50%; margin-left: -45px;
+
+                        span.label { position: relative; margin-bottom: 5px; cursor: default;
+
+                            &.label-success { background: rgb(73,175,205); }
+
+                            &.url { @include userSelect( text ); cursor: text; }
+                        }
+
+                        a { position: relative; @include transition;
+
+                            &.label { margin: 5px 0;
+
+                                &:hover { background: rgb(50,222,244); }
+                            }
+                        }
+                    }
+
+                    a.btn-mtop { margin-top: 10px; }
+                }
 
             }
 

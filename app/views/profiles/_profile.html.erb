@@ -32,7 +32,9 @@
     <div class="block-info">
         <span class="label label-info"><%= user.created_at -%></span>
     </div><br>
-    <div class="profile-actions">
-        <%= link_to( 'Edit Profile', '#', { :class => 'btn btn-inverse' } ) -%>
-    </div>
+    <%- if( current_user.login == params[ :user_id ] ) -%>
+        <div class="profile-actions">
+            <%= link_to( 'Edit Profile', '#', { :class => 'btn btn-inverse' } ) -%>
+        </div>
+    <%- end -%>
 </div>

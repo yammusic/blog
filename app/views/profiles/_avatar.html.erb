@@ -31,20 +31,24 @@
             </li>
             <li>
                 <p>
-                    <input type="radio" id="avatar-facebook" name="switch-avatar" <%= raw( 'disabled' ) -%>>
+                    <input type="radio" id="avatar-facebook" name="switch-avatar" <%= ( user.authentications.find_by_provider( 'facebook' ) ) ? '' : 'disabled' -%>>
                     <label for="avatar-facebook"><%= image_tag( 'avatar-facebook.png' ) -%> Use your Facebook picture</label>
                 </p>
                 <div class="option-avatar" style="display:none;">
-                    Facebook option here
+                <%- if( auth = user.authentications.find_by_provider( 'facebook' ) ) -%>
+                    <%= f.hidden_field( :remote_avatar_url, { :value => auth.image.gsub( 'square', 'large' ) } ) -%>
+                <%- end -%>
                 </div>
             </li>
             <li>
                 <p>
-                    <input type="radio" id="avatar-twitter" name="switch-avatar" <%= raw( 'disabled' ) -%>>
+                    <input type="radio" id="avatar-twitter" name="switch-avatar" <%= ( user.authentications.find_by_provider( 'twitter' ) ) ? '' : 'disabled' -%>>
                     <label for="avatar-twitter"><%= image_tag( 'avatar-twitter.png' ) -%> Use your Twitter picture</label>
                 </p>
                 <div class="option-avatar" style="display:none;">
-                    Twitter option here
+                <%- if( auth = user.authentications.find_by_provider( 'twitter' ) ) -%>
+                    <%= f.hidden_field( :remote_avatar_url, { :value => auth.image.gsub( '_normal', '' ) } ) -%>
+                <%- end -%>
                 </div>
             </li>
             <li>

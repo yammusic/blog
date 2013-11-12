@@ -45,7 +45,7 @@ jQuery(function() {
 
         if ( jThis.attr( 'src' ) != '' ) {
             $avatarIcon.attr( { 'src' : $originAvatar } );
-            $alertUrl.show( 'fast' ).delay( 10000 ).hide( 'fast' );
+            $alertUrl.show( 'fast' );
             jThis.attr( { 'src' : '' } );
         }
     }
@@ -60,6 +60,8 @@ jQuery(function() {
     var $avatarIcon = jQuery( 'div.avatar-icon img' );
     var $avatarTest = jQuery( '<img>' );
 
+    var $inputTwitter = jQuery( 'input#avatar-twitter' );
+    var $inputFacebook = jQuery( 'input#avatar-facebook' );
     var $inputFile = jQuery( '.option-avatar input[type="file"]' );
     var $inputUrl = jQuery( '.option-avatar input[type="url"]' );
     var $btnPreview = jQuery( '.option-avatar button.preview' );
@@ -81,11 +83,25 @@ jQuery(function() {
         $optionAvatar.children( 'input' ).attr( { 'disabled' : 'disabled' } );
         $inputUrl.val( '' );
         
-        jQuery(this).parent().parent().find( '.option-avatar' ).children( 'input' ).removeAttr( 'disabled' );
-        jQuery(this).parent().parent().find( '.option-avatar' ).slideDown( 'fast' );
+        jQuery( this ).parent().parent().find( '.option-avatar' ).children( 'input' ).removeAttr( 'disabled' );
+        jQuery( this ).parent().parent().find( '.option-avatar' ).slideDown( 'fast' );
 
-        if ($defaultRadiusImage.is( ':checked' )) {
+        if ( $defaultRadiusImage.is( ':checked' ) ) {
             $avatarIcon.attr( { 'src' : '/assets/noavatar.png' } );
+            $avatarActions.slideDown( 'fast' );
+        }
+
+        if ( $inputTwitter.is( ':checked' ) ) {
+            var src = $inputTwitter.parent().parent().find( '.option-avatar' ).children( 'input' ).attr( 'value' );
+            $inputTwitter.parent().parent().find( '.option-avatar' ).hide();
+            $avatarIcon.attr( { 'src' : src } )
+            $avatarActions.slideDown( 'fast' );
+        }
+
+        if ( $inputFacebook.is( ':checked' ) ) {
+            var src = $inputFacebook.parent().parent().find( '.option-avatar' ).children( 'input' ).attr( 'value' );
+            $inputFacebook.parent().parent().find( '.option-avatar' ).hide();
+            $avatarIcon.attr( { 'src' : src } )
             $avatarActions.slideDown( 'fast' );
         }
     });
@@ -118,10 +134,12 @@ jQuery(function() {
     $btnPreview.click(function( event ) {
         event.preventDefault();
         $alertUrl.hide( 'fast' );
+        $alertEmpty.hide( 'fast' );
         if ( $inputUrl.val() != '' ) {
             previewImage( jQuery( this ) );
         } else {
-            $alertEmpty.show( 'fast' ).delay( 5000 ).hide( 'fast' );
+            $alertEmpty.show( 'fast' ).delay( 3000 ).hide( 'fast' );
+            return( false )
         }
     });
 
@@ -134,12 +152,24 @@ jQuery(function() {
     
     function openWindow( url, title, w, h) {
         var popup = window.open( url, title, 'width='+w+', height='+h+', modal=no, resizable=no, toolbar=no, menubar=no,'+'scrollbars=no, alwaysRaise=yes' );
-        popup.resizeBy( 0, 50 );
+        // popup.resizeBy( 0, 50 );
     }
 
-    $btnTwitter = $( 'a[href="/auth/twitter"]' );
+    $btnTwitter = $( 'a[ href="/auth/twitter" ]' );
+    $btnFacebook = $( 'a[ href="/auth/facebook" ]' );
+    $btnGoogle = $( 'a[ href="/auth/google_oauth2" ]' );
 
     $btnTwitter.click( function( event ) {
+        event.preventDefault();
+        openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
+    });
+
+    $btnFacebook.click( function( event ) {
+        event.preventDefault();
+        openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
+    });
+
+    $btnGoogle.click( function( event ) {
         event.preventDefault();
         openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
     });

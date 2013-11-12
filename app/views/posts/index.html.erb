@@ -36,7 +36,7 @@
 					<h1><%= link_to( post.title, post_path(post) ) -%></a></h1>
 					<p><%= raw( post.description ) -%></p>
 					<ul class="actions">
-						<li><%= link_to( 'Read More', post_path(post) ) -%></li>
+						<li><%= link_to( 'Read More', post_path( post ) ) -%></li>
 						<%- if user_signed_in? -%>
 							<li><%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
 						<%- end -%>

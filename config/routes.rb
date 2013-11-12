@@ -1,6 +1,7 @@
 Blog::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#callback'
+  delete 'authentications/destroy_provider', :to => 'authentications#destroy_provider', :as => 'destroy_provider'
 
   get "users/index"
 
