@@ -3,19 +3,22 @@ Blog::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#callback'
   delete 'authentications/destroy_provider', :to => 'authentications#destroy_provider', :as => 'destroy_provider'
 
-  get "users/index"
-
-  get "profiles/index"
-
-  devise_for :users 
+  devise_for :users, :controllers => { :password => :users }
 
   resources :users do
+    collection do
+      put 'update_password'
+    end
+
     resources :profiles do
       collection do
         get ':action'
         put 'update_avatar'
+        put 'update_profile'
+        get 'profile', :to => 'profiles#profile', :as => 'profile'
         get 'avatar', :to => 'profiles#avatar', :as => 'avatar'
         get 'social', :to => 'profiles#social', :as => 'social'
+        get 'account', :to => 'profiles#account', :as => 'account'
       end
     end
   end

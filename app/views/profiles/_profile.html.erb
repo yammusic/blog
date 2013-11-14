@@ -1,5 +1,5 @@
 <%- sex = { 1 => 'Male', 2 => 'Female' } -%>
-<h3>Information</h3>
+<h3>Basic Information</h3>
 <hr style="margin-top: -30px; border-color: silver;">
 <div class="profile-info">
     <div class="block-label">
@@ -26,15 +26,44 @@
     <div class="block-info">
         <span class="label label-info"><%= sex[ user.profile.sex ] -%></span>
     </div><br>
-    <div class="block-label">
-        <span class="label">Registered:</span>
-    </div>
-    <div class="block-info">
-        <span class="label label-info"><%= user.created_at -%></span>
-    </div><br>
     <%- if( current_user.login == params[ :user_id ] ) -%>
         <div class="profile-actions">
-            <%= link_to( 'Edit Profile', '#', { :class => 'btn btn-inverse' } ) -%>
+            <%= button_tag( 'Edit Profile', { :class => 'btn btn-inverse', :type => nil, :name => nil, :id => 'edit-profile-btn' } ) -%>
         </div>
+    <%- end -%>
+</div>
+<div class="profile-form profile-info">
+    <%- sex = { 'Male' => 1, 'Female' => 2 } -%>
+    <%= form_for( user.profile, { :as => :user_profile, :url => update_profile_user_profiles_path( user.profile ), :method => :put } ) do |f| -%>
+        <div class="block-label">
+            <%= f.label( :first_name, 'First Name:', { :class => 'label' } ) -%>
+        </div>
+        <div class="block-info">
+            <%= f.text_field( :first_name ) -%>
+        </div><br>
+        <div class="block-label">
+            <%= f.label( :last_name, 'Last Name:', { :class => 'label' } ) -%>
+        </div>
+        <div class="block-info">
+            <%= f.text_field( :last_name ) -%>
+        </div><br>
+        <div class="block-label">
+            <%= f.label( :born, 'Born:', { :class => 'label' } ) -%>
+        </div>
+        <div class="block-info">
+            <%= f.date_select( :born, { :start_year => 2007, :end_year => 1930 } ) -%>
+        </div><br>
+        <div class="block-label">
+            <%= f.label( :sex, 'Sex:', { :class => 'label' } ) -%>
+        </div>
+        <div class="block-info">
+            <%= f.select( :sex, sex ) -%>
+        </div><br>
+        <%- if( current_user.login == params[ :user_id ] ) -%>
+            <div class="profile-actions">
+                <%= f.submit( 'Save', { :class => 'btn btn-inverse' } ) -%>
+                <%= button_tag( 'Back', { :class => 'btn btn-inverse back', :type => nil, :name => nil, :id => 'back-profile-btn' } ) -%>
+            </div>
+        <%- end -%>
     <%- end -%>
 </div>

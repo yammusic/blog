@@ -1,1 +1,97 @@
-<h1>account</h1>
+<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin' } -%>
+<h3>Account Information</h3>
+<hr style="margin-top: -30px; border-color: silver;">
+<div class="account-info">
+    <div class="block-label">
+        <span class="label">Username:</span>
+    </div>
+    <div class="block-info">
+        <span class="label label-info"><%= user.login -%></span>
+    </div><br>
+    <div class="block-label">
+        <span class="label">Email:</span>
+    </div>
+    <div class="block-info">
+        <span class="label label-info"><%= user.email -%></span>
+    </div><br>
+    <div class="block-label">
+        <span class="label">Role:</span>
+    </div>
+    <div class="block-info">
+        <span class="label label-info"><%= role[ user.profile.role ] -%></span>
+    </div><br>
+    <div class="block-label">
+        <span class="label">Registered:</span>
+    </div>
+    <div class="block-info">
+        <span class="label label-info"><%= user.created_at -%></span>
+    </div><br>
+    <%- if( current_user.login == params[ :user_id ] ) -%>
+        <div class="account-user-actions">
+            <%= button_tag( 'Change Password', { :class => 'btn btn-warning', :id => 'btn-password' } ) -%>
+            <%= link_to( 'Delete Account', '#', { :class => 'btn btn-danger', :id => 'btn_delete' } ) -%>
+        </div>
+        <div class="account-actions">
+            <%= button_tag( 'Edit Accout', { :class => 'btn btn-inverse', :type => nil, :name => nil, :id => 'edit-account-btn' } ) -%>
+        </div>
+    <%- end -%>
+</div>
+<div class="account-form account-info">
+    <%- form_role = { 'Super Admin' => 'super_admin', 'Admin' => 'admin' } -%>
+    <%= form_for( user, { :url => '#', :method => :put } ) do |f| -%>
+        <div class="block-label">
+            <%= f.label( :login, 'Username:', { :class => 'label' } ) -%>
+        </div>
+        <div class="block-info">
+            <%= f.text_field( :login ) -%>
+        </div><br>
+        <div class="block-label">
+            <%= f.label( :email, 'Email:', { :class => 'label' } ) -%>
+        </div>
+        <div class="block-info">
+            <%= f.text_field( :email ) -%>
+        </div><br>
+        <%- if ( can?( :manage, user ) ) -%>
+            <%= f.fields_for( :profile ) do |p| -%>
+                <div class="block-label">
+                    <%= p.label( :role, 'Role:', { :class => 'label' } ) -%>
+                </div>
+                <div class="block-info">
+                    <%= p.select( :role, form_role ) -%>
+                </div><br>
+            <%- end -%>
+        <%- end -%>
+        <%- if ( current_user.login == params[ :user_id ] ) -%>
+            <div class="account-actions">
+                <%= f.submit( 'Save', { :class => 'btn btn-inverse' } ) -%>
+                <%= button_tag( 'Back', { :class => 'btn btn-inverse back', :type => nil, :name => nil, :id => 'back-account-btn' } ) -%>
+            </div>
+        <%- end -%>
+    <%- end -%>
+</div>
+<div class="account-password account-info">
+    <%= form_for( current_user, { :as => :password_user, :url => update_password_users_path, :method => :put } ) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="block-label">
+            <%= f.label( :password, "New password", { :class => 'label' } ) %>
+        </div>
+        <div class="block-info">
+            <%= f.password_field( :password, { :autofocus => true, :style => 'margin-left:30px;' } ) %>
+            <span class="label label-important alert-url" style="display:none;">Password Short</span>
+        </div><br>
+        <div class="block-label">
+            <%= f.label( :password_confirmation, "Confirm new password", { :class => 'label' } ) %>
+            <span class="label label-important alert-url" style="">Image isn't valid</span>
+        </div>
+        <div class="block-info">
+            <%= f.password_field( :password_confirmation, { :style => 'margin-left:30px;' } ) %>
+        </div><br>
+        <%- if ( current_user.login == params[ :user_id ] ) -%>
+            <div class="account-actions">
+                <%= f.submit( 'Save', { :class => 'btn btn-inverse' } ) -%>
+                <%= button_tag( 'Back', { :class => 'btn btn-inverse back', :type => nil, :name => nil, :id => 'back-password-btn' } ) -%>
+            </div>
+        <%- end -%>
+    <%- end -%>
+</div>

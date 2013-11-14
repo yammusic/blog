@@ -15,6 +15,7 @@
 	</nav>
 </header>
 
+<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin' } -%>
 <section class="panel-user">
 	<div class="login">
 		<%- if user_signed_in? -%>
@@ -26,8 +27,11 @@
 	<%- if user_signed_in? -%>
 		<div class="panel">
 			<p><%= (current_user.profile.avatar_url.nil?) ? image_tag( 'noavatar.png' ) : image_tag( current_user.profile.avatar_url ) -%></p>
-			<p><%= current_user.login -%></p>
-			<p><%= current_user.email -%></p>
+			<hr>
+			<span class="label label-info"><%= current_user.login -%></span><br>
+			<span class="label label-info"><%= role[ current_user.profile.role ] -%></span><br>
+			<span class="label label-info"><%= current_user.email -%></span>
+			<hr>
 			<%= link_to( 'View Profile', user_profiles_path(current_user), { :class => 'btn btn-info' } ) -%>
 			<%= link_to( 'Sign out', destroy_user_session_path, { :method => :delete, :class => 'btn btn-danger' } ) -%>
 			<%= link_to( 'Users', users_path, { :class => 'btn btn-warning btn-users' } ) if( can?( :manage, User ) ) -%>

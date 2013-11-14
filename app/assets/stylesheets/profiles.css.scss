@@ -49,20 +49,31 @@ div.content-info { margin-left: 25%; min-height: 200px; background: rgba(240,240
 
     > div#profile {
 
-        > div.profile-info { text-align: left; margin-left: 40px;
+        div.profile-info { text-align: left; margin-left: 40px;
 
-            > div.block-label { display: inline-block; position: relative; width: 130px; text-align: left; margin: 5px 0; }
+            div.block-label { display: inline-block; position: relative; width: 130px; text-align: left; margin: 5px 0; }
 
-            > div.block-info { display: inline-block; position: relative; margin: 5px 0; }
+            div.block-info { display: inline-block; position: relative; margin: 5px 0;
 
-            > div.profile-actions { display: inline-block; position: relative; width: 90%; height: 50px; top: 10px;
+                input, select { margin: 0; }
 
-                > a { display: block; position: absolute; right: 50px; @include transition; text-decoration: none;
+                select[ id*="born_1i" ] { width: 70px; }
+                select[ id*="born_2i" ] { width: 110px; }
+                select[ id*="born_3i" ] { width: 60px; }
+            }
+
+            div.profile-actions { display: inline-block; position: relative; width: 90%; height: 50px; top: 10px;
+
+                > button, input { display: block; position: absolute; right: 50px; @include transition; text-decoration: none;
 
                     &:hover { top: -7px; }
+
+                    &.back { margin-right: 60px; }
                 }
             }
         }
+
+        div.profile-form { display: none; }
     }
 
     > div#avatar {
@@ -84,6 +95,7 @@ div.content-info { margin-left: 25%; min-height: 200px; background: rgba(240,240
 
                             input, label { display: inline-block; margin: 0; padding: 0; }
                             label { top: 1px; left: 5px; position: relative; }
+                            img { width: 32px; height: 32px; }
                         }
 
                         > div.option-avatar { margin-left: 20px; position: relative;
@@ -157,5 +169,37 @@ div.content-info { margin-left: 25%; min-height: 200px; background: rgba(240,240
 
             > hr { border: 1px solid #ccc !important; width: 80%; margin: 0; padding: 0; display: inline-block; }
         }
+    }
+
+    > div#account {
+
+        div.account-info { text-align: left; margin-left: 40px;
+
+            div.block-label { display: inline-block; position: relative; width: 130px; text-align: left; margin: 5px 0; }
+
+            div.block-info { display: inline-block; position: relative; margin: 5px 0;
+
+                input, select { margin: 0; }
+            }
+
+            div.account-actions { display: inline-block; position: relative; width: 90%; height: 50px; top: 10px;
+
+                > button, input { display: block; position: absolute; right: 50px; @include transition; text-decoration: none;
+
+                    &:hover { top: -7px; }
+
+                    &.back { margin-right: 60px; }
+                }
+            }
+        }
+
+        span.alert-password, span.alert-empty { position: absolute; line-height: 30px !important; padding: 0 12px 0 8px; font-size: 14px !important; text-align: center; border: 0px 0px 0px 0px none none none none rgb(255, 255, 255) rgb(70, 126, 42) rgb(255, 255, 255) rgb(255, 255, 255); border-radius: 0px 3.1875px 3.1875px 0px; text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 1px; box-shadow: rgba(0,0,0,.2) -4px 0px 4px 0px inset; top: 3px; left: 270px;
+
+            &.alert-password:after { content: ""; position: absolute; width: 0; height: 0; border-width: 15px !important; border-style: solid; border-color: transparent #b94a48 transparent transparent; top: 0; left: -30px; }
+
+            &.alert-empty:after { content: ""; position: absolute; width: 0; height: 0; border-width: 15px !important; border-style: solid; border-color: transparent #468847 transparent transparent; top: 0; left: -30px; }
+        }
+
+        div.account-form, div.account-password { display: none; }
     }
 }

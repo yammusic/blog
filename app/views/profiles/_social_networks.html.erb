@@ -5,20 +5,20 @@
         <%= image_tag( 'facebook-social-icon.png' ) -%>
         <h4>Facebook Account</h4>
         <div class="social-networks-content">
-            <%- if ( auth = user.authentications.find_by_provider( 'facebook' ) ) -%>
-                <%= image_tag( auth.image.gsub( 'square', 'large' ) ) -%>
+            <%- if ( auth_facebook = user.authentications.find_by_provider( 'facebook' ) ) -%>
+                <%= image_tag( auth_facebook.image.gsub( 'square', 'large' ) ) -%>
                 <div class="provider-info">
-                    <%= link_to( 'Facebook: @'+auth.nickname, auth.url, { :target => '_blank', :class => 'label label-info' } ) -%>
+                    <%= link_to( 'Facebook: @'+auth_facebook.nickname.to_s, auth_facebook.url, { :target => '_blank', :class => 'label label-info' } ) -%>
                     <br>
                     <span class="label">Name:</span>
-                    <span class="label label-success"><%= auth.name -%></span>
+                    <span class="label label-success"><%= auth_facebook.name -%></span>
                     <br>
                     <span class="label">URL:</span>
-                    <span class="label label-success url"><%= auth.url -%></span>
+                    <span class="label label-success url"><%= auth_facebook.url -%></span>
                 </div>
                 <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/facebook', { :class => 'btn btn-info btn-mtop' } ) -%>
-                    <%= link_to( 'Remove', destroy_provider_path(), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Facebook Account of this page?' } } ) -%>
+                    <%= link_to( 'Remove', destroy_provider_path( :uid => auth_facebook.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Facebook Account of this page?' } } ) -%>
                 <%- end -%>
             <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Facebook', '/auth/facebook', { :class => 'btn btn-info' } ) -%>
@@ -30,20 +30,20 @@
         <%= image_tag( 'twitter-social-icon.png' ) -%>
         <h4>Twitter Account</h4>
         <div class="social-networks-content">
-            <%- if ( auth = user.authentications.find_by_provider( 'twitter' ) ) -%>
-                <%= image_tag( auth.image.gsub( '_normal', '' ) ) -%>
+            <%- if ( auth_twitter = user.authentications.find_by_provider( 'twitter' ) ) -%>
+                <%= image_tag( auth_twitter.image.gsub( '_normal', '' ) ) -%>
                 <div class="provider-info">
-                    <%= link_to( 'Twitter: @'+auth.nickname, auth.url, { :target => '_blank', :class => 'label label-info' } ) -%>
+                    <%= link_to( 'Twitter: @'+auth_twitter.nickname.to_s, auth_twitter.url, { :target => '_blank', :class => 'label label-info' } ) -%>
                     <br>
                     <span class="label">Name:</span>
-                    <span class="label label-success"><%= auth.name -%></span>
+                    <span class="label label-success"><%= auth_twitter.name -%></span>
                     <br>
                     <span class="label">URL:</span>
-                    <span class="label label-success url"><%= auth.url -%></span>
+                    <span class="label label-success url"><%= auth_twitter.url -%></span>
                 </div>
                 <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/twitter', { :class => 'btn btn-info btn-mtop' } ) -%>
-                    <%= link_to( 'Remove', destroy_provider_path(), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Twitter Account of this page?' } } ) -%>
+                    <%= link_to( 'Remove', destroy_provider_path( :uid => auth_twitter.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Twitter Account of this page?' } } ) -%>
                 <%- end -%>
             <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Twitter', '/auth/twitter', { :class => 'btn btn-info' } ) -%>
@@ -55,20 +55,20 @@
         <%= image_tag( 'google-social-icon.jpg' ) -%>
         <h4>Google Account</h4>
         <div class="social-networks-content">
-            <%- if ( auth = user.authentications.find_by_provider( 'googles' ) ) -%>
-                <%= image_tag( auth.image ) -%>
+            <%- if ( auth_google = user.authentications.find_by_provider( 'google' ) ) -%>
+                <%= image_tag( auth_google.image ) -%>
                 <div class="provider-info">
-                    <%= link_to( 'Google: @'+auth.nickname, auth.url, { :target => '_blank', :class => 'label label-info' } ) -%>
+                    <%= link_to( 'Google: @'+auth_google.nickname.to_s, auth_google.url, { :target => '_blank', :class => 'label label-info' } ) -%>
                     <br>
                     <span class="label">Name:</span>
-                    <span class="label label-success"><%= auth.name -%></span>
+                    <span class="label label-success"><%= auth_google.name -%></span>
                     <br>
                     <span class="label">URL:</span>
-                    <span class="label label-success url"><%= auth.url -%></span>
+                    <span class="label label-success url"><%= auth_google.url -%></span>
                 </div>
                 <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/google_oauth2', { :class => 'btn btn-info btn-mtop' } ) -%>
-                    <%= link_to( 'Remove', destroy_provider_path( auth.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Twitter Account of this page?' } } ) -%>
+                    <%= link_to( 'Remove', destroy_provider_path( :uid => auth_google.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Google Account of this page?' } } ) -%>
                 <%- end -%>
             <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Google', '/auth/google_oauth2', { :class => 'btn btn-info' } ) -%>

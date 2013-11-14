@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-jQuery(function() {
+jQuery( function() {
 
     /////////////////////////////////
     /// MENU TABS PROFILE
@@ -62,6 +62,7 @@ jQuery(function() {
 
     var $inputTwitter = jQuery( 'input#avatar-twitter' );
     var $inputFacebook = jQuery( 'input#avatar-facebook' );
+    var $inputGoogle = jQuery( 'input#avatar-google' );
     var $inputFile = jQuery( '.option-avatar input[type="file"]' );
     var $inputUrl = jQuery( '.option-avatar input[type="url"]' );
     var $btnPreview = jQuery( '.option-avatar button.preview' );
@@ -101,6 +102,13 @@ jQuery(function() {
         if ( $inputFacebook.is( ':checked' ) ) {
             var src = $inputFacebook.parent().parent().find( '.option-avatar' ).children( 'input' ).attr( 'value' );
             $inputFacebook.parent().parent().find( '.option-avatar' ).hide();
+            $avatarIcon.attr( { 'src' : src } )
+            $avatarActions.slideDown( 'fast' );
+        }
+
+        if ( $inputGoogle.is( ':checked' ) ) {
+            var src = $inputGoogle.parent().parent().find( '.option-avatar' ).children( 'input' ).attr( 'value' );
+            $inputGoogle.parent().parent().find( '.option-avatar' ).hide();
             $avatarIcon.attr( { 'src' : src } )
             $avatarActions.slideDown( 'fast' );
         }
@@ -172,6 +180,93 @@ jQuery(function() {
     $btnGoogle.click( function( event ) {
         event.preventDefault();
         openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
+    });
+
+    //////////////////////////////////////////////////////////
+    
+
+    /////////////////////////////////
+    /// FORM PROFILE BASIC INFO
+    /////////////////////////////////
+
+    var $EditProfileInfo = $( "button#edit-profile-btn" );
+    var $BackProfileInfo = $( "button#back-profile-btn" );
+    var $formProfile = $( "div.profile-form" );
+    var $infoProfile = $( "div.profile-info" );
+
+    $EditProfileInfo.click( function() {
+        $infoProfile.hide( 'fast' );
+        $formProfile.slideDown( 'fast' );
+    });
+
+    $BackProfileInfo.click( function( event ) {
+        event.preventDefault();
+        $infoProfile.slideDown( 'fast' );
+        $formProfile.slideUp( 'fast' );
+    });
+
+    //////////////////////////////////////////////////////////
+
+
+    /////////////////////////////////
+    /// FORM ACCOUNT INFO
+    /////////////////////////////////
+
+    var $EditAccountInfo = $( "button#edit-account-btn" );
+    var $BackAccountInfo = $( "button#back-account-btn" );
+    var $BackAccountPassword = $( "button#back-password-btn" );
+    var $btnChangePassword = $( "button#btn-password" );
+    var $formAccount = $( "div.account-form" );
+    var $passwordAccount = $( "div.account-password" );
+    var $infoAccount = $( "div.account-info" );
+
+    var $editPasswordUserForm = $( "form.edit_password_user" );
+    var $editPasswordUserFormBtn = $( "form.edit_password_user input[ type='submit' ]" );
+    var $inputPassword = $editPasswordUserForm.children( 'div.block-info' ).children( 'input[ id*="user_password" ]' );
+    var $alertInputPassword = $editPasswordUserForm.children( 'div.block-info' ).children( 'input[ id*="user_password" ]' ).parent().children( 'span.alert-password');
+    var $inputPasswordConfirmation = $editPasswordUserForm.children( 'div.block-info' ).children( 'input[ id*="user_password_confirmation" ]' );
+
+    alert($alertInputPassword.attr('class'));
+
+    $EditAccountInfo.click( function() {
+        $passwordAccount.hide();
+        $infoAccount.hide( 'fast' );
+        $formAccount.slideDown( 'fast' );
+    });
+
+    $btnChangePassword.click( function() {
+        $formAccount.hide();
+        $infoAccount.hide( 'fast' );
+        $passwordAccount.slideDown( 'fast' );
+    });
+
+    $BackAccountInfo.click( function( event ) {
+        event.preventDefault();
+        $infoAccount.slideDown( 'fast' );
+        $formAccount.slideUp( 'fast' );
+        $passwordAccount.hide();
+    });
+
+    $BackAccountPassword.click( function( event ) {
+        event.preventDefault();
+        $infoAccount.slideDown( 'fast' );
+        $passwordAccount.slideUp( 'fast' );
+        $formAccount.hide();
+    });
+
+    $editPasswordUserFormBtn.click( function( event ) {
+        event.preventDefault();
+        if ( $inputPassword.val() === $inputPasswordConfirmation.val() ) {
+            $editPasswordUserForm.submit();
+        } else {
+            alert('incorrecto');
+        }
+    });
+
+    $inputPassword.change( function( event ) {
+        if ( $inputPassword.val().length < 8 ) {
+            alert('short');
+        }
     });
 
     //////////////////////////////////////////////////////////

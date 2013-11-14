@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   # load_resource
-  skip_authorize_resource :only => [ :index, :update_avatar, :profile, :avatar, :social, :account ]
+  skip_authorize_resource :only => [ :index, :update_avatar, :update_profile, :profile, :avatar, :social, :account ]
 
   def index
     @user = User.find_by_params_profile( params )
@@ -33,12 +33,20 @@ class ProfilesController < ApplicationController
   end
 
   def update_avatar
-    @user = User.find( params[ :user_id ] )
-    @profile = @user.profile
+    @profile = current_user.profile
     if ( @profile.update_attributes( params[ :user_profile ] ) )
-      redirect_to( avatar_user_profiles_path( @user ) )
+      redirect_to( avatar_user_profiles_path( current_user ) )
     else
       render(:text => 'error al guardar imagen')
+    end
+  end
+
+  def update_profile
+    @profile = User.find( params[ :user_id ] ).profile
+    if ( @profile.update_attributes( params[ :user_profile ] ) )
+      redirect_to( profile_user_profiles_path( current_user ) )
+    else
+      render :text => params.inspect
     end
   end
 

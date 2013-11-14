@@ -53,6 +53,17 @@
             </li>
             <li>
                 <p>
+                    <input type="radio" id="avatar-google" name="switch-avatar" <%= ( user.authentications.find_by_provider( 'google' ) ) ? '' : 'disabled' -%>>
+                    <label for="avatar-google"><%= image_tag( 'avatar-google.png' ) -%> Use your Google picture</label>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                <%- if( auth = user.authentications.find_by_provider( 'google' ) ) -%>
+                    <%= f.hidden_field( :remote_avatar_url, { :value => auth.image } ) -%>
+                <%- end -%>
+                </div>
+            </li>
+            <li>
+                <p>
                     <input type="radio" id="avatar-default" name="switch-avatar">
                     <label for="avatar-default"><%= image_tag( 'noavatar.png', { :size => '32x32' } ) -%> Use the default picture</label>
                     <div class="option-avatar" style="display:none;">
