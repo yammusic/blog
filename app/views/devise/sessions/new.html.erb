@@ -1,21 +1,24 @@
 <section id="devise">
-    <h2>Sign In</h2>
+    <h2 style="margin-bottom:0;">Sign In</h2><br>
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <div><%= f.label :login, 'Username' %><br />
-      <%= f.text_field :login, { :autofocus => true, :required => true, :placeholder => 'Username or Email' } %></div>
-
-      <div><%= f.label :password %><br />
-      <%= f.password_field :password, { :required => true, :placeholder => 'Your password' } %></div>
-
-      <% if devise_mapping.rememberable? -%>
-        <div><%= f.check_box :remember_me %> <%= f.label :remember_me, { :class => 'remember' } %></div>
-      <% end -%>
-
-      <div><%= f.submit "Sign in", { :class => 'btn' } %></div>
+      <div style="margin-top:20px;">
+        <%= f.label :login, 'Username', { :class => 'label label-info' } %>
+        <%= f.text_field :login, { :autofocus => true, :required => true, :placeholder => 'Username or Email' } %>
+      </div><br>
+      <div>
+        <%= f.label :password, { :class => 'label label-info' } %>
+        <%= f.password_field :password, { :required => true, :placeholder => 'Your password' } %>
+      </div><br>
+      <div class="actions">
+        <%= f.submit "Sign in", { :class => 'btn btn-info' } %>
+        <br>
+        <%= link_to( "Forgot your password?", new_password_path( resource ), { :class => 'btn btn-warning' } ) -%>
+      </div>
     <% end %><br>
 
-    <%= link_to( "Sign up", new_registration_path( resource ), { :class => 'btn btn-inverse' } ) -%>
-    |
-    <%= link_to( "Forgot your password?", new_password_path( resource ), { :class => 'btn btn-warning' } ) -%>
+    <div class="or">
+      <span>OR</span>
+      <%= link_to( "Sign up", new_registration_path( resource ), { :class => 'btn btn-inverse' } ) -%>
+    </div>
 </section>

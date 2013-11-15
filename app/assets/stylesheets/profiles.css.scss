@@ -193,11 +193,10 @@ div.content-info { margin-left: 25%; min-height: 200px; background: rgba(240,240
             }
         }
 
-        span.alert-password, span.alert-empty { position: absolute; line-height: 30px !important; padding: 0 12px 0 8px; font-size: 14px !important; text-align: center; border: 0px 0px 0px 0px none none none none rgb(255, 255, 255) rgb(70, 126, 42) rgb(255, 255, 255) rgb(255, 255, 255); border-radius: 0px 3.1875px 3.1875px 0px; text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 1px; box-shadow: rgba(0,0,0,.2) -4px 0px 4px 0px inset; top: 3px; left: 270px;
+        span.alert-password, span.alert-password-confirmation { position: absolute; line-height: 30px !important; padding: 0 12px 0 8px; font-size: 14px !important; text-align: center; border: 0px 0px 0px 0px none none none none rgb(255, 255, 255) rgb(70, 126, 42) rgb(255, 255, 255) rgb(255, 255, 255); border-radius: 0px 3.1875px 3.1875px 0px; text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 1px; box-shadow: rgba(0,0,0,.2) -4px 0px 4px 0px inset; top: 3px; left: 270px;
 
-            &.alert-password:after { content: ""; position: absolute; width: 0; height: 0; border-width: 15px !important; border-style: solid; border-color: transparent #b94a48 transparent transparent; top: 0; left: -30px; }
 
-            &.alert-empty:after { content: ""; position: absolute; width: 0; height: 0; border-width: 15px !important; border-style: solid; border-color: transparent #468847 transparent transparent; top: 0; left: -30px; }
+            &:after { content: ""; position: absolute; width: 0; height: 0; border-width: 15px !important; border-style: solid; border-color: transparent #b94a48 transparent transparent; top: 0; left: -30px; }
         }
 
         div.account-form, div.account-password { display: none; }

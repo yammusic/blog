@@ -223,10 +223,11 @@ jQuery( function() {
     var $editPasswordUserForm = $( "form.edit_password_user" );
     var $editPasswordUserFormBtn = $( "form.edit_password_user input[ type='submit' ]" );
     var $inputPassword = $editPasswordUserForm.children( 'div.block-info' ).children( 'input[ id*="user_password" ]' );
-    var $alertInputPassword = $editPasswordUserForm.children( 'div.block-info' ).children( 'input[ id*="user_password" ]' ).parent().children( 'span.alert-password');
     var $inputPasswordConfirmation = $editPasswordUserForm.children( 'div.block-info' ).children( 'input[ id*="user_password_confirmation" ]' );
+    var $alertInputPassword = $inputPassword.parent().find( 'span.alert-password' );
+    var $alertInputPasswordConfirmation = $inputPasswordConfirmation.parent().find( 'span.alert-password-confirmation' );
 
-    alert($alertInputPassword.attr('class'));
+    console.info( $inputPasswordConfirmation.parent().html() );
 
     $EditAccountInfo.click( function() {
         $passwordAccount.hide();
@@ -256,18 +257,26 @@ jQuery( function() {
 
     $editPasswordUserFormBtn.click( function( event ) {
         event.preventDefault();
-        if ( $inputPassword.val() === $inputPasswordConfirmation.val() ) {
-            $editPasswordUserForm.submit();
+        if ( $inputPassword.val().length <= 0 ) {
+            $alertInputPassword.show( 'fast' );
+        } else if ( $inputPassword.val() != $inputPasswordConfirmation.val() ) {
+            $alertInputPasswordConfirmation.show( 'fast' );
         } else {
-            alert('incorrecto');
+            $alertInputPasswordConfirmation.hide( 'fast' );
+            $editPasswordUserForm.submit();
         }
     });
 
     $inputPassword.change( function( event ) {
         if ( $inputPassword.val().length < 8 ) {
-            alert('short');
+            $alertInputPassword.show( 'fast' );
+        } else {
+            $alertInputPassword.hide( 'fast' );
         }
-    });
+    }).keydown( function() {
+            $alertInputPassword.hide( 'fast' );       
+            $alertInputPasswordConfirmation.hide( 'fast' );       
+    });;
 
     //////////////////////////////////////////////////////////
 

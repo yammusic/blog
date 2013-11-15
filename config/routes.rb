@@ -2,12 +2,14 @@ Blog::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#callback'
   delete 'authentications/destroy_provider', :to => 'authentications#destroy_provider', :as => 'destroy_provider'
+  match '/users/sign_up' => 'users#new'
 
-  devise_for :users, :controllers => { :password => :users }
+  devise_for :users
 
   resources :users do
     collection do
-      put 'update_password'
+      put 'update_user'
+      put 'new_user'
     end
 
     resources :profiles do

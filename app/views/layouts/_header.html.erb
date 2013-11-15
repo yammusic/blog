@@ -26,7 +26,7 @@
 	</div>
 	<%- if user_signed_in? -%>
 		<div class="panel">
-			<p><%= (current_user.profile.avatar_url.nil?) ? image_tag( 'noavatar.png' ) : image_tag( current_user.profile.avatar_url ) -%></p>
+			<p><%= ( current_user.profile.avatar_url.nil? ) ? image_tag( 'noavatar.png' ) : image_tag( current_user.profile.avatar_url ) -%></p>
 			<hr>
 			<span class="label label-info"><%= current_user.login -%></span><br>
 			<span class="label label-info"><%= role[ current_user.profile.role ] -%></span><br>

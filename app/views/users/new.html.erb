@@ -1,0 +1,54 @@
+<section id="devise">
+    <h2>Sign Up</h2><br>
+
+    <%= form_for( @user, { :url => new_user_users_path, :method => :put } ) do |f| %>
+
+        <legend>Account Info</legend>
+        <div style="margin-top: 20px;">
+          <%= f.label :login, 'Username', { :class => 'label label-info' } %>
+          <%= f.text_field :login, { :autofocus => true, :required => true, :placeholder => 'Username' } %>
+        </div><br>
+        <div>
+          <%= f.label :email, { :class => 'label label-info' } %>
+          <%= f.email_field :email, { :required => true, :placeholder => 'Email' } %>
+        </div><br>
+        <div>
+          <%= f.label :password, { :class => 'label label-info' } %>
+          <%= f.password_field :password, { :required => true, :placeholder => 'Your Password' } %>
+        </div><br>
+        <div style="margin-bottom: 15px;">
+          <%= f.label :password_confirmation, { :class => 'label label-info' } %>
+          <%= f.password_field :password_confirmation, { :required => true, :placeholder => 'Repeat your password' } %>
+        </div><br>
+
+        <legend>Profile Info</legend>
+        <%= f.fields_for( @user.build_profile ) do |p| -%>
+          <%- sex = { 'Male' => 1, 'Female' => 2 } -%>
+          <div style="margin-top:20px;">
+            <%= p.label( :first_name, { :class => 'label label-info' } ) -%>
+            <%= p.text_field( :first_name, { :required => true, :placeholder => 'First name' } ) -%>
+          </div><br>
+          <div>
+            <%= p.label( :last_name, { :class => 'label label-info' } ) -%>
+            <%= p.text_field( :last_name, { :required => true, :placeholder => 'Last name' } ) -%>
+          </div><br>
+          <div class="born">
+            <%= p.label( :born, { :class => 'label label-info' } ) -%>
+            <%= p.date_select( :born, { :end_year => 1930, :start_year => 2007 } ) -%>
+          </div><br>
+          <div>
+            <%= p.label( :sex, { :class => 'label label-info' } ) -%>
+            <%= p.select( :sex, sex ) -%>
+          </div><br>
+        <%- end -%>
+
+        <div>
+          <%= f.submit "Sign up", { :class => 'btn btn-info', :style => 'margin-bottom:20px;' } %>
+        </div>
+    <% end %>
+    <br>
+    <div class="or">
+      <span>OR</span>
+      <%= link_to( "Sign in", '#', { :class => 'btn btn-inverse' } ) -%>
+    </div>
+</section>

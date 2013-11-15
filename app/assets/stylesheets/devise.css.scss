@@ -1,12 +1,41 @@
-section#devise {margin-top: 60px;
+section#devise { margin-top: 70px; position: relative;
 
-    form { width: auto; display: inline-block; clear: both;
+    h2 { width: 50%; display: inline-block; line-height: 80px; background: rgba(0,172,235,.9);  color: #eee; text-shadow: 2px 0 2px #999; position: relative; }
 
-        label { display: inline-block; width: auto; 
+    form { width: 50%; display: inline-block; background: rgba(245,245,245,.8); position: relative; top: 0; margin: 0;
+        
+        > legend { width: 100%; display: inline-block; background: rgba(200,200,200,.8);  color: #666; margin: 0; line-height: 0; padding: 35px 0 25px; text-align: center; margin-top: -5px; }
 
-            &.remember { position: relative; top: +3px; margin-bottom: 10px; }
+
+        > div { text-align: left; width: auto; padding: 2px; display: inline-block;
+
+            &.actions { text-align: center;
+
+                input { margin-bottom: 10px; }
+                a { margin-bottom: 20px; }
+            }
+
+            &.born { text-align: center;
+
+                label { width: 200px !important; display: block !important; text-align: left; }
+                select { margin-bottom: 0; display: block;
+                    
+                    &[ id*="born_3i" ] { margin-bottom: 15px; }
+                }
+            }
+
+            &.h3 { width: 50%; display: inline-block; background: rgba(200,200,200,.8);  color: #666; margin: 0; padding: 10px 0 5px; text-align: center; position: relative; top: 0; margin-top: -5px; }
+            
+            > label.label { display: block; width: auto; margin-bottom: -5px;
+                &.remember { position: relative; top: +3px; margin-bottom: 10px; }
+            }
         }
     }
 
-    div.or { position: relative; top: -10px; }
+    div.or { width: 50%; display: inline-block; line-height: 80px; background: rgba(0,172,235,.8); color: #eee; text-shadow: 2px 0 2px #999; position: relative; text-align: right;
+
+        span { margin-right: 15px; font-size: 20px; }
+
+        a { margin-right: 50px; }
+    }
 }

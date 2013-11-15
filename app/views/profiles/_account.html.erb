@@ -38,7 +38,7 @@
 </div>
 <div class="account-form account-info">
     <%- form_role = { 'Super Admin' => 'super_admin', 'Admin' => 'admin' } -%>
-    <%= form_for( user, { :url => '#', :method => :put } ) do |f| -%>
+    <%= form_for( current_user, { :as => :account_user, :url => update_user_users_path, :method => :put } ) do |f| -%>
         <div class="block-label">
             <%= f.label( :login, 'Username:', { :class => 'label' } ) -%>
         </div>
@@ -70,22 +70,22 @@
     <%- end -%>
 </div>
 <div class="account-password account-info">
-    <%= form_for( current_user, { :as => :password_user, :url => update_password_users_path, :method => :put } ) do |f| %>
-        <%= f.hidden_field :reset_password_token %>
+    <%= form_for( current_user, { :as => :password_user, :url => update_user_users_path, :method => :put } ) do |f| %>
+        <% #f.hidden_field :reset_password_token %>
 
         <div class="block-label">
             <%= f.label( :password, "New password", { :class => 'label' } ) %>
         </div>
         <div class="block-info">
             <%= f.password_field( :password, { :autofocus => true, :style => 'margin-left:30px;' } ) %>
-            <span class="label label-important alert-url" style="display:none;">Password Short</span>
+            <span class="label label-important alert-password" style="display:none;">Password Short</span>
         </div><br>
         <div class="block-label">
             <%= f.label( :password_confirmation, "Confirm new password", { :class => 'label' } ) %>
-            <span class="label label-important alert-url" style="">Image isn't valid</span>
         </div>
         <div class="block-info">
             <%= f.password_field( :password_confirmation, { :style => 'margin-left:30px;' } ) %>
+            <span class="label label-important alert-password-confirmation" style="display:none;">Passwords are not the same</span>
         </div><br>
         <%- if ( current_user.login == params[ :user_id ] ) -%>
             <div class="account-actions">
