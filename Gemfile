@@ -25,10 +25,14 @@ gem "cancan"
 gem "carrierwave"
 gem "rmagick", :require => 'RMagick'
 
+gem 'ruby-openid'
+
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
+gem 'omniauth-yahoo'
 # gem 'omniauth-identity'
 
 # Gems used only for assets and not required

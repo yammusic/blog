@@ -42,7 +42,7 @@ class ProfilesController < ApplicationController
   end
 
   def update_profile
-    @profile = User.find( params[ :user_id ] ).profile
+    @profile = User.find( current_user ).profile
     if ( @profile.update_attributes( params[ :user_profile ] ) )
       redirect_to( profile_user_profiles_path( current_user ) )
     else

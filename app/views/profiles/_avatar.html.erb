@@ -64,6 +64,28 @@
             </li>
             <li>
                 <p>
+                    <input type="radio" id="avatar-linkedin" name="switch-avatar" <%= ( user.authentications.find_by_provider( 'linkedin' ) ) ? '' : 'disabled' -%>>
+                    <label for="avatar-linkedin"><%= image_tag( 'avatar-linkedin.png' ) -%> Use your Linked In picture</label>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                <%- if( auth = user.authentications.find_by_provider( 'linkedin' ) ) -%>
+                    <%= f.hidden_field( :remote_avatar_url, { :value => auth.image } ) -%>
+                <%- end -%>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <input type="radio" id="avatar-yahoo" name="switch-avatar" <%= ( user.authentications.find_by_provider( 'yahoo' ) ) ? '' : 'disabled' -%>>
+                    <label for="avatar-yahoo"><%= image_tag( 'avatar-yahoo.png' ) -%> Use your Yahoo picture</label>
+                </p>
+                <div class="option-avatar" style="display:none;">
+                <%- if( auth = user.authentications.find_by_provider( 'yahoo' ) ) -%>
+                    <%= f.hidden_field( :remote_avatar_url, { :value => auth.image } ) -%>
+                <%- end -%>
+                </div>
+            </li>
+            <li>
+                <p>
                     <input type="radio" id="avatar-default" name="switch-avatar">
                     <label for="avatar-default"><%= image_tag( 'noavatar.png', { :size => '32x32' } ) -%> Use the default picture</label>
                     <div class="option-avatar" style="display:none;">

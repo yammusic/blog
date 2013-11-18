@@ -9,7 +9,7 @@ Blog::Application.routes.draw do
   resources :users do
     collection do
       put 'update_user'
-      put 'new_user'
+      put 'create_user'
     end
 
     resources :profiles do

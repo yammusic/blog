@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     #load_and_authorize_resource
-    skip_authorize_resource :only => [ :update_user, :new, :new_user ]
+    skip_authorize_resource :only => [ :update_user, :new, :create_user, :destroy ]
 
     def index
         @users = User.all
@@ -8,13 +8,20 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        @profile = @user.build_profile
     end
 
-    def new_user
-        @user = User.new( params[ :user ] )
-        if @user.save
-            @user.profile.new( params[ :user ][ :profile ] ).save
-            redirect_to( root_path )
+    def create_user
+        @user = User.new(
+            :login => params[ :user ][ 'login' ],
+            :email => params[ :user ][ 'email' ],
+            :password => params[ :user ][ 'password' ],
+            :password_confirmation => params[ :user ][ 'password_confirmation' ]
+        )
+        @profile = @user.build_profile( params[ :user ][ :profile ], :role => 'user' )
+        if @user.save!
+            sign_in( @user, { :bypass => true } )
+            redirect_to( user_profiles_path( @user ) )
         else
             render :text => 'error'
         end
@@ -25,10 +32,16 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        @post = User.find_by_params( params )
-        @post.destroy
+        @user = User.find( params[ :user_id ] )
+        @user.destroy
 
-        redirect_to( users_path )
+        if ( current_user )
+            if ( current_user.profile.role == 'super_admin' )
+                redirect_to( users_path )
+            end
+        else
+            redirect_to( root_path )
+        end
     end
 
     def password

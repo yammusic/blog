@@ -1,7 +1,7 @@
 <section id="devise">
     <h2>Sign Up</h2><br>
 
-    <%= form_for( @user, { :url => new_user_users_path, :method => :put } ) do |f| %>
+    <%= form_for( @user, { :url => create_user_users_path, :method => :put } ) do |f| %>
 
         <legend>Account Info</legend>
         <div style="margin-top: 20px;">
@@ -22,7 +22,7 @@
         </div><br>
 
         <legend>Profile Info</legend>
-        <%= f.fields_for( @user.build_profile ) do |p| -%>
+        <%= f.fields_for( @profile ) do |p| -%>
           <%- sex = { 'Male' => 1, 'Female' => 2 } -%>
           <div style="margin-top:20px;">
             <%= p.label( :first_name, { :class => 'label label-info' } ) -%>

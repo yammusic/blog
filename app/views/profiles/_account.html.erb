@@ -1,4 +1,4 @@
-<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin' } -%>
+<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin', 'user' => 'User' } -%>
 <h3>Account Information</h3>
 <hr style="margin-top: -30px; border-color: silver;">
 <div class="account-info">
@@ -26,10 +26,10 @@
     <div class="block-info">
         <span class="label label-info"><%= user.created_at -%></span>
     </div><br>
-    <%- if( current_user.login == params[ :user_id ] ) -%>
+    <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
         <div class="account-user-actions">
             <%= button_tag( 'Change Password', { :class => 'btn btn-warning', :id => 'btn-password' } ) -%>
-            <%= link_to( 'Delete Account', '#', { :class => 'btn btn-danger', :id => 'btn_delete' } ) -%>
+            <%= link_to( 'Delete Account', cancel_user_registration_path( :user_id => current_user.id ), { :class => 'btn btn-danger', :id => 'btn_delete', :method => :delete } ) -%>
         </div>
         <div class="account-actions">
             <%= button_tag( 'Edit Accout', { :class => 'btn btn-inverse', :type => nil, :name => nil, :id => 'edit-account-btn' } ) -%>
@@ -61,7 +61,7 @@
                 </div><br>
             <%- end -%>
         <%- end -%>
-        <%- if ( current_user.login == params[ :user_id ] ) -%>
+        <%- if ( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
             <div class="account-actions">
                 <%= f.submit( 'Save', { :class => 'btn btn-inverse' } ) -%>
                 <%= button_tag( 'Back', { :class => 'btn btn-inverse back', :type => nil, :name => nil, :id => 'back-account-btn' } ) -%>
@@ -87,7 +87,7 @@
             <%= f.password_field( :password_confirmation, { :style => 'margin-left:30px;' } ) %>
             <span class="label label-important alert-password-confirmation" style="display:none;">Passwords are not the same</span>
         </div><br>
-        <%- if ( current_user.login == params[ :user_id ] ) -%>
+        <%- if ( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
             <div class="account-actions">
                 <%= f.submit( 'Save', { :class => 'btn btn-inverse' } ) -%>
                 <%= button_tag( 'Back', { :class => 'btn btn-inverse back', :type => nil, :name => nil, :id => 'back-password-btn' } ) -%>

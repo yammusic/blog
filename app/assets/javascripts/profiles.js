@@ -63,6 +63,8 @@ jQuery( function() {
     var $inputTwitter = jQuery( 'input#avatar-twitter' );
     var $inputFacebook = jQuery( 'input#avatar-facebook' );
     var $inputGoogle = jQuery( 'input#avatar-google' );
+    var $inputLinkedin = jQuery( 'input#avatar-linkedin' );
+    var $inputYahoo = jQuery( 'input#avatar-yahoo' );
     var $inputFile = jQuery( '.option-avatar input[type="file"]' );
     var $inputUrl = jQuery( '.option-avatar input[type="url"]' );
     var $btnPreview = jQuery( '.option-avatar button.preview' );
@@ -112,6 +114,20 @@ jQuery( function() {
             $avatarIcon.attr( { 'src' : src } )
             $avatarActions.slideDown( 'fast' );
         }
+
+        if ( $inputLinkedin.is( ':checked' ) ) {
+            var src = $inputLinkedin.parent().parent().find( '.option-avatar' ).children( 'input' ).attr( 'value' );
+            $inputLinkedin.parent().parent().find( '.option-avatar' ).hide();
+            $avatarIcon.attr( { 'src' : src } )
+            $avatarActions.slideDown( 'fast' );
+        }
+
+        if ( $inputYahoo.is( ':checked' ) ) {
+            var src = $inputYahoo.parent().parent().find( '.option-avatar' ).children( 'input' ).attr( 'value' );
+            $inputYahoo.parent().parent().find( '.option-avatar' ).hide();
+            $avatarIcon.attr( { 'src' : src } )
+            $avatarActions.slideDown( 'fast' );
+        }
     });
 
     function previewImage( input ) {
@@ -155,7 +171,7 @@ jQuery( function() {
     
 
     /////////////////////////////////
-    /// AVATAR PREVIEW PICTURE
+    /// WINDOWS SOCIAL NETWORK
     /////////////////////////////////
     
     function openWindow( url, title, w, h) {
@@ -166,6 +182,8 @@ jQuery( function() {
     $btnTwitter = $( 'a[ href="/auth/twitter" ]' );
     $btnFacebook = $( 'a[ href="/auth/facebook" ]' );
     $btnGoogle = $( 'a[ href="/auth/google_oauth2" ]' );
+    $btnLinkedin = $( 'a[ href="/auth/linkedin" ]' );
+    $btnYahoo = $( 'a[ href="/auth/yahoo" ]' );
 
     $btnTwitter.click( function( event ) {
         event.preventDefault();
@@ -178,6 +196,16 @@ jQuery( function() {
     });
 
     $btnGoogle.click( function( event ) {
+        event.preventDefault();
+        openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
+    });
+
+    $btnLinkedin.click( function( event ) {
+        event.preventDefault();
+        openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
+    });
+
+    $btnYahoo.click( function( event ) {
         event.preventDefault();
         openWindow( jQuery( this ).attr( 'href' ), jQuery( this ).html(), 880, 380 );
     });
