@@ -1,6 +1,7 @@
 Blog::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#callback'
+  get '/auth/:provider' => 'authentications#filter_provider', :as => 'oauth'
   delete 'authentications/destroy_provider', :to => 'authentications#destroy_provider', :as => 'destroy_provider'
   match '/users/sign_up' => 'users#new'
 

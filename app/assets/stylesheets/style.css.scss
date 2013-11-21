@@ -3,12 +3,12 @@
 @mixin userSelect($select: none) { -moz-user-select: $select; -khtml-user-select: $select; -webkit-user-select: $select; user-select: $select; }
 
 * { margin: 0; padding: 0; @include userSelect; }
-html, body { width: 100%; max-width: 100%; min-height: 100%; text-align: center; background: url(/assets/squares.png) fixed; }
+html, body { width: 100%; max-width: 100%; min-height: 100%; text-align: center; background: url( /assets/squares.png ) fixed; }
 body { padding: 0 !important; }
 
 a, input { outline: none !important; }
 
-input[type="text"], input[type="url"], input[type="email"], input[type="telephone"], textarea { @include userSelect( text ); }
+input[ type="text" ], input[ type="url" ], input[ type="email" ], input[ type="telephone" ], textarea { @include userSelect( text ); }
 
 section#global-wrapper { margin: 0; padding: 0; position: relative; @include transition(.3s);
 
@@ -63,6 +63,33 @@ section.panel-user { position: fixed; right: -200px; top: 80px; z-index: 100; wi
 	}
 
 	div.panel { width: 200px; text-align: center; padding: 10px 0; position: relative; background: rgba(255,255,255,.9); background-clip: padding-box; border: 15px solid rgba(0,0,0,.5);
+
+		> div {
+
+			> a.btn { color: white; display: block; width: 100%; padding: 0; line-height: 50px; margin-bottom: 5px;
+
+				&:last-child { margin-bottom: 0; }
+
+				&.btn-facebook { background: rgba(60,89,155,.6);
+					&:hover { background: rgba(60,89,155,.9) }
+				}
+				&.btn-twitter { background: rgba(0,171,240,.6);
+					&:hover { background: rgba(0,171,240,.9) }
+				}
+				&.btn-google { background: rgba(216,71,52,.6);
+					&:hover { background: rgba(216,71,52,.9) }
+				}
+				&.btn-linkedin { background: rgba(0,92,141,.6);
+					&:hover { background: rgba(0,92,141,.9) }
+				}
+				&.btn-yahoo { background: rgba(97,12,142,.6);
+					&:hover { background: rgba(97,12,142,.9) }
+				}
+				&.btn-openid { background: rgba(238,128,34,.6);
+					&:hover { background: rgba(238,128,34,.9) }
+				}
+			}
+		}
 
 		span.label-info { margin-bottom: 5px; }
 

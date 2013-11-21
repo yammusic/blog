@@ -33,8 +33,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb_90 do
-    # process :resize_to_fill => [50, 50]
     process :resize_to_limit => [90, 90]
+  end
+
+  version :thumb_50 do
+    process :resize_to_limit => [50, 50]
   end
 
   version :thumb_min do

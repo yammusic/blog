@@ -2,72 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@mixin transition($times: .4s) { -webkit-transition: all $times; -moz-transition: all $times; -ms-transition: all $times; -o-transition: all $times; transition: all $times; }
+@mixin transition( $times: .4s ) { -webkit-transition: all $times; -moz-transition: all $times; -ms-transition: all $times; -o-transition: all $times; transition: all $times; }
 
 
 //HEADER -->
 
-div#banner { position: relative; width: 97%; height: 500px; display: inline-block; margin-top: -15px; margin-bottom: 65px;
+div#banner { position: relative; width: 97%; height: 480px; display: block; margin: -18px auto 20px auto; background: url( /assets/banner.jpg ); background-size: 100% 100%;
 
-	> .banner-title { margin-top: 80px;
+	> .banner-title { position: relative; top: 80px;
 
 		> h1 { font-size: 80px; color: lightgray; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 20px black; }
-	}
-
-	> .banner-img { position: absolute; top: 0; z-index: -5; width: 100%;
-
-		> img { height: 500px; width: 100%; }
 	}
 }
 
 
 //INDEX --> 
 
-section#content { width: 97%; display: inline-block; margin-top: -50px; position: relative;
+section#content { width: 97%; display: block; margin: 0 auto; position: relative;
 
 	article { padding: 30px 0; position: relative; width: 100%; display: inline-block; background: rgba(255,255,255,.8);
 
-		aside { float: left; margin: 20px 10px 0 8%;
+		> div.wrapper-post { width: 80%; margin: 0 auto;
 
-			ul { list-style: none; width: 230px; margin: 0; background: white;
+			 > aside { float: left; margin: 0; position: relative; margin-top: 25px; width: 230px; margin-left: 20px;
 
-				li { border: 1px solid silver; margin-bottom: -1px; color: #666; line-height: 35px; text-align: left; padding-left: 13px; @include transition; text-transform: uppercase; cursor: default; position: relative;
+				> ul { list-style: none; width: 100%; margin: 0; background: white;
 
-					a { color: #666; display: inline-block; width: 100%; line-height: 35px; @include transition(.3s); text-transform: uppercase; text-decoration: none; position: relative;
+					> li { border: 1px solid silver; margin-bottom: -1px; color: #666; line-height: 35px; text-align: left; padding-left: 13px; @include transition; text-transform: uppercase; cursor: default; position: relative;
+
+						a { color: #666; width: 100%; line-height: 35px; @include transition(.3s); text-decoration: none; position: relative;
+
+							span { opacity: 0; @include transition(.3s); }
+
+							&:hover span { opacity: 1; margin-right: 15px; }
+
+							&:hover { color: rgba(82,168,236,.9); }
+						}
 
 						span { opacity: 0; @include transition(.3s); }
 
 						&:hover span { opacity: 1; margin-right: 15px; }
 
-						&:hover { color: rgba(82,168,236,.9); }
+						&:hover { background: rgba(200,200,200,.8); }
 					}
-
-					span { opacity: 0; @include transition(.3s); }
-
-					&:hover span { opacity: 1; margin-right: 15px; }
-
-					&:hover { background: rgba(200,200,200,.8); }
 				}
 			}
-		}
 
-		.content { display: inline-block; width: 60%; position: relative;
+			> .content { display: block; margin-left: 260px; position: relative;
 
-			h1 { text-align: justify;
+				h1 { text-align: justify;
 
-				a { color: #555; }
-			}
+					a { color: #555; }
+				}
 
-			p { width: 95%; text-align: justify; padding: 10px 15px; display: inline-block; font-size: 17px; }
+				p { width: 95%; text-align: justify; padding: 10px 15px; display: inline-block; font-size: 17px; }
 
-			ul { width: 100%; height: auto; position: relative; margin: 0; margin-top: 20px; text-align: left;
+				ul { width: 100%; height: auto; position: relative; margin: 0; margin-top: 20px; text-align: left;
 
-				li { position: relative; width: 170px; height: 68px; display: inline-block; margin-left: -4px; margin: 0 5px; text-align: center;
+					li { position: relative; width: 170px; height: 68px; display: inline-block; margin-left: -4px; margin: 0 5px; text-align: center;
 
 
-					a { color: #555; background: rgba(82,168,236,.9); line-height: 68px; display: inline-block; width: 170px; text-transform: uppercase; font-size: 16px; text-decoration: none; @include transition; position: absolute; top: 0; left: 0;
+						a { color: #555; background: rgba(82,168,236,.9); line-height: 68px; display: inline-block; width: 170px; text-transform: uppercase; font-size: 16px; text-decoration: none; @include transition; position: absolute; top: 0; left: 0;
 
-						&:hover { background: rgba(0,0,0,.8); color: lightgray; margin-top: -5px;}
+							&:hover { background: rgba(0,0,0,.8); color: lightgray; margin-top: -5px;}
+						}
 					}
 				}
 			}
@@ -117,21 +115,29 @@ section#content { width: 97%; display: inline-block; margin-top: -50px; position
 
 	//SHOW -->
 
-	article.post { margin-top: 110px;
+	> article.post { margin-top: 60px;
 
-		div.content-post { width: 80%; display: inline-block; padding: 10px 0; position: relative;
+		> div.content-post { width: 80%; display: block; margin: 0 auto; padding: 10px 0; position: relative;
 
-			p.info { display: inline-block; width: 50%; text-align: left; height: auto; margin-bottom: 30px; color: #777;
+			> h1 { margin: 0; padding: 0; padding-top: 7px; padding-bottom: 13px; }
 
-				span { margin: 0 7px; }
+			> p.info { display: block; margin: 0 auto; width: 60%; text-align: left; color: #777;
+
+				span { margin: 0 7px;
+
+					a { text-decoration: none; color: #777;
+
+						&:hover { color: rgb(73,175,205); }
+					}
+				}
 			}
 
-			div.description-content { display: inline-block; width: 80%; text-align: justify; height: auto; margin-bottom: 20px;
+			> div.description-content { display: block; margin: 0 auto; width: 97%; text-align: justify; height: auto; margin-bottom: 20px;
 
 				strong { display: block; }
 			}
 
-			div.text-content { display: inline-block; width: 80%; text-align: justify; height: auto; margin-bottom: 20px;
+			> div.text-content { display: block; margin: 0 auto; width: 97%; text-align: justify; height: auto; margin-bottom: 20px;
 
 				strong { display: block; }
 			}
@@ -147,11 +153,11 @@ section#content { width: 97%; display: inline-block; margin-top: -50px; position
 				}
 			}
 
-			div.tags { display: inline-block; position: relative; width: 80%; text-align: justify;
+			div.tags { display: block; margin: 0 auto; position: relative; width: 80%; text-align: justify;
 
 				strong { color: #555; }
 
-				a { color: #555; line-height: 25px; display: inline-block; padding: 0 7px; margin: 3px 0; }
+				a { line-height: 30px; display: inline-block; padding: 0 7px; margin: 3px; }
 			}
 		}
 

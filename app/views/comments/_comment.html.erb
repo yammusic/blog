@@ -1,16 +1,18 @@
-<%- if !comment.id.nil? -%>
+<%- if( !comment.id.nil? ) -%>
+<%- @user = User.user_info( comment.commenter ) -%>
 	<div class="comment">
-		<figure class="avatar"><%= image_tag( 'rails.png' ) -%></figure>
+		<figure class="avatar">
+			<%= ( !@user.profile.avatar_url.nil? ) ? image_tag( @user.profile.avatar_url( :thumb_50 ) ) : image_tag( 'noavatar.png' ) -%>
+		</figure>
 		<div class="body-comment">
 			<p class="info-comment">
-				<span>Written by <%= comment.commenter -%></span>
+				<span>Written by <%= link_to( comment.commenter, user_profiles_path( @user ) ) -%></span>
 				|
 				<span>Published <%= comment.created -%></span>
 			</p>
 			<p class="text-comment"><%= comment.body -%></p>
 			<p class="links">
-				<%= link_to( 'Share', '#' ) -%>
-				<%= link_to( 'Destroy Comment', [comment.post, comment], { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) %>
+				<%= link_to( 'Destroy Comment', [ comment.post, comment ], { :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-danger' } ) if( can?( :destroy, comment ) ) %>
 			</p>
 		</div>
 	</div>

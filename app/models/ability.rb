@@ -5,13 +5,18 @@ class Ability
     user ||= User.new # guest user
 
     if user.role?( :super_admin )
-        can :manage, :all
-        can :create, :all
+        can [ :manage, :create, :update, :destroy, :read ], :all
+    elsif user.role?( :admin )
+        can [
+            :create, :update, :destroy, :read
+        ], [ 
+            Post, User, Tag, Profile, Authentication, Category, Comment
+        ]
+    elsif user.role?( :user )
+        can :create, [ Comment ]
+        can :read, [ Post, Profile, Tag, Category, Comment ]
     else
-        can :read, :posts
-        can :read, :users do
-            user.role?( :super_admin )
-        end
+        can :read, Post
     end
     # Define abilities for the passed in user here. For example:
     #

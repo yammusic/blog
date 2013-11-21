@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
       return( self.find_by_title( params[ :id ].gsub( '-', ' ' ) ) )
   end
 
-  def self.find_by_params_comments( params )
+  def self.find_by_params_has( params )
       return( self.find_by_title( params[ :post_id ].gsub( '-', ' ' ) ) )
   end
 

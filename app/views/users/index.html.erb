@@ -1,4 +1,4 @@
-<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin' } -%>
+<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin', 'user' => 'User' } -%>
 <section id="wrapper-users">
     <h1>Listing Users</h1>
 
@@ -24,7 +24,7 @@
                     <td>
                         <%= link_to( 'Edit', edit_user_path( user ), { :class => 'btn btn-warning' } ) -%>
                         <%= link_to( 'Profile', user_profiles_path( user.login ), { :class => 'btn btn-info' } ) -%>
-                        <%= link_to( 'Destroy', cancel_user_registration_path( :user_id => user.id ), { :method => :delete, :confirm => 'Are you sure to want delete it?', :class => 'btn btn-danger' } ) -%>
+                        <%= link_to( 'Destroy', cancel_user_registration_path( :user_id => user.id ), { :method => :delete, :data => { :confirm => 'Are you sure to want delete it?' }, :class => 'btn btn-danger' } ) -%>
                     </td>
                 </tr>
             <%- end -%>

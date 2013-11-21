@@ -1,18 +1,17 @@
 class TagsController < ApplicationController
-	http_basic_authenticate_with :name => "admin", :password => "123", :only => [:destroy, :create]
 
 	def index
-		@post = Post.find(params[:post_id])
+		@post = Post.find_by_params_has( params )
 		@tags = @post.tags.all
-		respond_to do |format|
+		respond_to do | format |
 			format.html
 			format.json { render( { :json => @tags } ) }
 		end
 	end
 
 	def edit
-		@post = Post.find(params[:post_id])
-		@tag = @post.tags.find(params[:id])
+		@post = Post.find( params[ :post_id ] )
+		@tag = @post.tags.find( params[ :id ] )
 	end
 
 	def create

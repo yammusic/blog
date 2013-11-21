@@ -3,45 +3,44 @@
 		<h1>Blog's</h1>
 		<h1>Games</h1>
 	</div>
-	<div class="banner-img">
-		<%= image_tag( 'banner.jpg' ) -%>
-	</div>
 </div>
 
 <section id="content">
-	<%- if @posts.size == 0 && !params[:q].nil? -%>
+	<%- if( ( @posts.size == 0 ) && !params[ :q ].nil? ) -%>
 		<article>
-			<h1>Search Result <%= params[:q] -%></h1>
+			<h1>Search Result <%= params[ :q ] -%></h1>
 			<p>No results were found. ¿Want to search again?</p>
 			<%= form_tag( '/', { :method => 'GET' } ) do -%>
-				<%= search_field_tag( :q, params[:q], { :placeholder => 'Search' } ) -%>
+				<%= search_field_tag( :q, params[ :q ], { :placeholder => 'Search' } ) -%>
 				<%= button_tag( '', { :for => 'search', :alt => 'Search', :name => nil } ) -%>
 			<%- end -%>
 		</article>
 	<%- else -%>
-		<%- @posts.each do |post| -%>
-			<%- comments = (post.comments.all.size != 0) ? post.comments.all.size : 'No' -%>
+		<%- @posts.each do | post | -%>
+			<%- comments = ( post.comments.all.size != 0 ) ? post.comments.all.size : 'No' -%>
 			<article>
+			<div class="wrapper-post">
 				<aside>
 					<ul>
-						<%- post.categories.all.each do |c| -%>
-							<li><%= link_to( raw( "<span>></span>"+c.name ), category_path(c) ) -%></li>
+						<%- post.categories.all.each do | c | -%>
+							<li><%= link_to( raw( "<span>></span>" + c.name ), category_path( c ) ) -%></li>
 						<%- end -%>
-						<li><%= raw( "<span>></span>Written By " )+link_to( post.author ) -%></li>
+						<li><%= raw( "<span>></span>Written By " + link_to( post.author, user_profiles_path( :user_id => post.author ) ) ) -%></li>
 						<li><span>></span><%= comments -%> Comments</li>
-						<li><%= raw( "<span>></span>Created " )+post.created -%></li>
+						<li><%= raw( "<span>></span>Created " ) + post.created -%></li>
 					</ul>
 				</aside>
 				<div class="content">
-					<h1><%= link_to( post.title, post_path(post) ) -%></a></h1>
+					<h1><%= link_to( post.title, post_path( post ) ) -%></a></h1>
 					<p><%= raw( post.description ) -%></p>
 					<ul class="actions">
 						<li><%= link_to( 'Read More', post_path( post ) ) -%></li>
-						<%- if user_signed_in? -%>
-							<li><%= link_to( 'Destroy Post', post_path(post), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
+						<%- if ( can?( :destroy, Post ) ) -%>
+							<li><%= link_to( 'Destroy Post', post_path( post ), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
 						<%- end -%>
 					</ul>
 				</div>
+			</div>
 			</article>
 			<hr>
 		<%- end -%>

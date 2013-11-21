@@ -33,6 +33,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
 gem 'omniauth-yahoo'
+gem 'omniauth-openid'
 # gem 'omniauth-identity'
 
 # Gems used only for assets and not required

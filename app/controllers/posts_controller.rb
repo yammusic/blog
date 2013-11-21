@@ -36,8 +36,6 @@ class PostsController < ApplicationController
 
 		if ( !params[ :mercury_frame ].nil? )
 			authorize! :edit, @post
-		else
-			@tag = Tag.new
 		end
 	end
 

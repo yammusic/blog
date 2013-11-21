@@ -3,7 +3,7 @@
 		<div class="content-post">
 			<h1 data-mercury="simple" id="title"><%= @post.title -%></h1>
 			<p class="info">
-				<span class="written">Written by <%= @post.author -%></span>
+				<span class="written">Written by <%= link_to( @post.author, user_profiles_path( @post.author ) ) -%></span>
 				|
 				<span class="published">Published <%= @post.created -%></span>
 			</p><br>
@@ -29,11 +29,15 @@
 			<hr>
 			<div class="tags">
 				<strong>Tags:</strong>
-				<%- @post.tags.each do |tag|  -%>
-					<%= link_to( tag.name, '#' ) -%>
+				<%- if( @post.tags.empty? && can?( :create, @post ) ) -%>
+					<%= link_to( 'Add Tag', post_tags_path( @post ), { :class => 'btn btn-success' } ) -%>
+				<%- else -%>
+					<%- @post.tags.each do | tag |  -%>
+						<%= link_to( tag.name, '#', { :class => 'label' } ) -%>
+					<%- end -%>
 				<%- end -%>
 			</div>
-			<hr>
+			<hr id="comment-anchor">
 			<div class="wrapper-comments">
 				<%= render( { :partial => 'comments/form' } ) -%>
 				<h4><%= (@post.comments.all.size != 0 ) ? @post.comments.all.size : 'No' -%> Comments</h4>

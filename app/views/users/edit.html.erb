@@ -1,1 +1,29 @@
-<%= @user.inspect.to_s -%>
+<section id="devise">
+    <h2 style="margin-bottom:0px">Editing <%= @user.login -%></h2><br>
+
+    <%= form_for( @user, { :url => user_path( @user ), :method => :put } ) do |f| %>
+
+        <div style="margin-top: 20px;">
+          <%= f.label :login, 'Username', { :class => 'label label-info' } %>
+          <%= f.text_field :login, { :required => true, :placeholder => 'Username' } %>
+        </div><br>
+        <div>
+          <%= f.label :email, { :class => 'label label-info' } %>
+          <%= f.email_field :email, { :required => true, :placeholder => 'Email' } %>
+        </div><br>
+        <%= f.fields_for( :profile ) do |p| -%>
+          <%- role = { 'Super Admin' => 'super_admin', 'Admin' => 'admin', 'User' => 'user' } -%>
+          <div>
+            <%= p.label( :role, { :class => 'label label-info' } ) -%>
+            <%= p.select( :role, role ) -%>
+          </div><br>
+        <%- end -%>
+        <div>
+          <%= f.submit "Save", { :class => 'btn btn-info', :style => 'margin-bottom:20px;' } %>
+        </div>
+    <% end %>
+    <br>
+    <div class="or">
+      <%= link_to( "Back", users_path, { :class => 'btn btn-inverse' } ) -%>
+    </div>
+</section>

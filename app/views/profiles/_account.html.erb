@@ -24,7 +24,7 @@
         <span class="label">Registered:</span>
     </div>
     <div class="block-info">
-        <span class="label label-info"><%= user.created_at -%></span>
+        <span class="label label-info"><%= user.created_at.strftime( '%d %B %Y %I:%M:%S %P' ) -%></span>
     </div><br>
     <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
         <div class="account-user-actions">

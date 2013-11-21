@@ -1,20 +1,38 @@
-<h3>Add a Comment:</h3>
-<div class="form-comment">
-	<div class="commenter-avatar">
-		<%= image_tag( 'noavatar.png' ) -%>
+<section id="wrapper-comment-form">
+	<h3>Add a Comment:</h3>
+
+	<div class="form-comment">
+
+		<div class="commenter-avatar">
+			<%- if( user_signed_in? && !current_user.profile.avatar_url.nil? ) -%>
+				<%= image_tag( current_user.profile.avatar_url( :thumb_50 ) ) -%>
+			<%- else -%>
+				<%= image_tag( 'noavatar.png' ) -%>
+			<%- end -%>
+		</div>
+
+		<%= form_for( [ @post, @post.comments.build ] ) do | f | %>
+			<%= f.hidden_field( :created, { :value => Date.today } ) -%>
+
+			<div class="textarea">
+				<%= f.text_area :body, { :placeholder => 'Leave a comment...', :rows => 1 } -%>
+			</div>
+			<div class="commenter">
+			<%- if( user_signed_in? ) -%>
+				<%= f.hidden_field( :user_id, { :value => current_user.id } ) -%>
+				<%= f.hidden_field( :commenter, { :value => current_user.login } ) -%>
+				<span class="label label-info">Autor: <%= current_user.login -%></span>
+				<%= f.submit( 'Comment', { :class => 'btn btn-inverse' } ) -%>				
+			<%- else -%>
+				<%= link_to( 'Register', new_user_path( :session_post => @post.title.gsub( '+', '-' ) ), { :class => 'btn btn-info' } ) -%>
+				|
+				<%= link_to( 'Sign in', new_user_session_path( :session_post => @post.id ), { :class => 'btn btn-info' } ) -%>
+				<span>OR</span>
+				<%= f.text_field( :commenter, { :placeholder => 'Enter a name' } ) -%>
+				<%= f.submit( 'Comment', { :class => 'btn btn-inverse' } ) -%>
+			<%- end -%>
+			</div>
+		<% end %>
+
 	</div>
-	<%= form_for([@post, @post.comments.build]) do |f| %>
-		<%= f.hidden_field( :created, { :value => Date.today } ) -%>
-		<div class="textarea">
-			<%= f.text_area :body, { :placeholder => 'Leave a comment...', :rows => 1 } %>
-		</div>
-		<div class="commenter">
-			<%= link_to( 'Sign in', new_user_session_path(), { :class => 'btn btn-info' } ) -%>
-			<span>OR</span>
-			<%= f.text_field :commenter, { :placeholder => 'Enter a name' } %>
-			<%= f.submit( 'Comment', { :class => 'btn btn-inverse' } ) -%>
-		</div>
-		<div>
-		</div>
-	<% end %>
-</div>
+</section>

@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  has_one :profile
+  has_many :authentications
+  has_many :comments
+
+  accepts_nested_attributes_for :profile, :authentications, :comments
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,12 +12,7 @@ class User < ActiveRecord::Base
          :authentication_keys => [ :login ]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :login, :email, :password, :password_confirmation, :remember_me, :reset_password_token, :profile_attributes, :profile
-
-  has_one :profile
-  has_many :authentications
-
-  accepts_nested_attributes_for :profile, :authentications
+  attr_accessible :login, :email, :password, :password_confirmation, :remember_me, :reset_password_token, :profile_attributes
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -38,5 +39,9 @@ class User < ActiveRecord::Base
 
   def self.find_by_params_profile( params )
     return( self.find_by_login( params[ :user_id ].gsub( '-', ' ' ) ) )
+  end
+
+  def self.user_info( user_login )
+    return( self.find_by_login( user_login ) )
   end
 end

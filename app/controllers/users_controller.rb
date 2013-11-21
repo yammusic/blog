@@ -12,18 +12,31 @@ class UsersController < ApplicationController
     end
 
     def create_user
-        @user = User.new(
-            :login => params[ :user ][ 'login' ],
-            :email => params[ :user ][ 'email' ],
-            :password => params[ :user ][ 'password' ],
-            :password_confirmation => params[ :user ][ 'password_confirmation' ]
-        )
-        @profile = @user.build_profile( params[ :user ][ :profile ], :role => 'user' )
+        params[ :user ][ :profile_attributes ][ :role ] = 'user'
+        @user = User.new( params[ :user ] )
+        @profile = @user.build_profile( params[ :user ][ :profile_attributes ] )
         if @user.save!
             sign_in( @user, { :bypass => true } )
-            redirect_to( user_profiles_path( @user ) )
+            if ( !params[ :session_post ].nil? )
+                redirect_to( post_path( params[ :session_post ], :anchor => 'comment-anchor' ) )
+            else
+                redirect_to( user_profiles_path( @user ) )
+            end
         else
-            render :text => 'error'
+            render :text => 'error al crear usuario'
+        end
+    end
+
+    def edit
+        @user = User.find_by_params( params )
+    end
+
+    def update
+        @user = User.find_by_params( params )
+        if ( @user.update_attributes( params[ :user ] ) )
+            redirect_to( users_path )
+        else
+            render :text => 'error al modificar usuario'
         end
     end
 
@@ -33,19 +46,22 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find( params[ :user_id ] )
+        @user.profile.destroy
+        @user.comments.all.map do | c |
+            c.destroy
+        end
+        @user.authentications.all.map do | a |
+            a.destroy
+        end
         @user.destroy
 
-        if ( current_user )
+        if ( user_signed_in? )
             if ( current_user.profile.role == 'super_admin' )
                 redirect_to( users_path )
             end
         else
             redirect_to( root_path )
         end
-    end
-
-    def password
-        render :text => 'hi'
     end
 
     def update_user

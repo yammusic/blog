@@ -15,13 +15,13 @@
 	</nav>
 </header>
 
-<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin' } -%>
+<%- role = { 'super_admin' => 'Super Admin', 'admin' => 'Admin', 'user' => 'User' } -%>
 <section class="panel-user">
 	<div class="login">
-		<%- if user_signed_in? -%>
-			<%= link_to( current_user.login, user_profiles_path(current_user), { :onclick => 'return(panelUser())' } ) -%>
+		<%- if( user_signed_in? ) -%>
+			<%= link_to( current_user.login, user_profiles_path(current_user), { :onclick => 'return( panelUser() )' } ) -%>
 		<%- else -%>
-			<%= link_to( 'Sign in', new_user_session_path ) -%>
+			<%= link_to( 'Sign in', new_user_session_path, { :onclick => 'return( panelUser() )' } ) -%>
 		<%- end -%>
 	</div>
 	<%- if user_signed_in? -%>
@@ -32,10 +32,22 @@
 			<span class="label label-info"><%= role[ current_user.profile.role ] -%></span><br>
 			<span class="label label-info"><%= current_user.email -%></span>
 			<hr>
-			<%= link_to( 'View Profile', user_profiles_path(current_user), { :class => 'btn btn-info' } ) -%>
+			<%= link_to( 'View Profile', user_profiles_path( current_user ), { :class => 'btn btn-info' } ) -%>
 			<%= link_to( 'Sign out', destroy_user_session_path, { :method => :delete, :class => 'btn btn-danger' } ) -%>
 			<%= link_to( 'Users', users_path, { :class => 'btn btn-warning btn-users' } ) if( can?( :manage, User ) ) -%>
-			<%= link_to( 'New post', new_post_path, { :class => 'btn btn-success btn-users' } ) if( can?( :manage, Post ) ) -%>
+			<%= link_to( 'New post', new_post_path, { :class => 'btn btn-success btn-users' } ) if( can?( :create, Post ) ) -%>
+		</div>
+	<%- else -%>
+		<div class="panel">
+			<div>
+				<%= link_to( 'Go to Login', new_user_session_path, { :class => 'btn btn-info' } ) -%>
+				<%= link_to( 'Sign in With Facebook', oauth_path( 'facebook' ), { :class => 'btn btn-facebook' } ) -%>
+				<%= link_to( 'Sign in With Twitter', oauth_path( 'twitter' ), { :class => 'btn btn-twitter' } ) -%>
+				<%= link_to( 'Sign in With Google', oauth_path( 'google_oauth2' ), { :class => 'btn btn-google' } ) -%>
+				<%= link_to( 'Sign in With Linked In', oauth_path( 'linkedin' ), { :class => 'btn btn-linkedin' } ) -%>
+				<%= link_to( 'Sign in With Yahoo', oauth_path( 'yahoo' ), { :class => 'btn btn-yahoo' } ) -%>
+				<%= link_to( 'Sign in With Open ID', oauth_path( 'open_id' ), { :class => 'btn btn-openid' } ) -%>
+			</div>
 		</div>
 	<%- end -%>
 </section>
