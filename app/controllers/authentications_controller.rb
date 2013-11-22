@@ -36,8 +36,8 @@ class AuthenticationsController < ApplicationController
         sign_in( @user, { :bypass => true } )
         render( { :text => '<script>window.opener.location.href = "/"; window.close(); </script>' } )
       else
-        @new_auth = Authentication.oauth_new_user( auth )
-        render( { :text => '<script>window.opener.location.href = "'+ new_user_path( :user => @new_auth ) +'"; window.close(); </script>' } )
+        new_auth = Authentication.oauth_new_user( auth )
+        render( { :text => '<script>window.opener.location.href = "'+ new_user_path( :user => new_auth ) +'"; window.close(); </script>' } )
       end
       
     end

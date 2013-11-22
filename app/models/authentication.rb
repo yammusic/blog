@@ -100,7 +100,7 @@ class Authentication < ActiveRecord::Base
                 :remote_avatar_url => image,
                 :role => 'user'
             },
-            :authentication_attributes => {
+            :authentications_attributes => {
                 :uid => auth[ 'uid' ],
                 :provider => auth[ 'provider' ],
                 :nickname => nickname,

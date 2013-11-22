@@ -16,11 +16,11 @@
                     <span class="label">URL:</span>
                     <span class="label label-success url"><%= auth_facebook.url -%></span>
                 </div>
-                <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+                <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/facebook', { :class => 'btn btn-info btn-mtop' } ) -%>
                     <%= link_to( 'Remove', destroy_provider_path( :uid => auth_facebook.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Facebook Account of this page?' } } ) -%>
                 <%- end -%>
-            <%- elsif( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+            <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Facebook', '/auth/facebook', { :class => 'btn btn-info' } ) -%>
             <%- end -%>
         </div>
@@ -41,11 +41,11 @@
                     <span class="label">URL:</span>
                     <span class="label label-success url"><%= auth_twitter.url -%></span>
                 </div>
-                <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+                <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/twitter', { :class => 'btn btn-info btn-mtop' } ) -%>
                     <%= link_to( 'Remove', destroy_provider_path( :uid => auth_twitter.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Twitter Account of this page?' } } ) -%>
                 <%- end -%>
-            <%- elsif( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+            <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Twitter', '/auth/twitter', { :class => 'btn btn-info' } ) -%>
             <%- end -%>
         </div>
@@ -66,11 +66,11 @@
                     <span class="label">URL:</span>
                     <span class="label label-success url"><%= auth_google.url -%></span>
                 </div>
-                <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+                <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/google_oauth2', { :class => 'btn btn-info btn-mtop' } ) -%>
                     <%= link_to( 'Remove', destroy_provider_path( :uid => auth_google.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Google Account of this page?' } } ) -%>
                 <%- end -%>
-            <%- elsif( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+            <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Google', '/auth/google_oauth2', { :class => 'btn btn-info' } ) -%>
             <%- end -%>
         </div>
@@ -91,11 +91,11 @@
                     <span class="label">URL:</span>
                     <span class="label label-success url"><%= auth_linkedIn.url -%></span>
                 </div>
-                <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+                <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/linkedin', { :class => 'btn btn-info btn-mtop' } ) -%>
                     <%= link_to( 'Remove', destroy_provider_path( :uid => auth_linkedIn.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Linked In Account of this page?' } } ) -%>
                 <%- end -%>
-            <%- elsif( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+            <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Linked In', '/auth/linkedin', { :class => 'btn btn-info' } ) -%>
             <%- end -%>
         </div>
@@ -116,11 +116,11 @@
                     <span class="label">URL:</span>
                     <span class="label label-success url"><%= auth_yahoo.url -%></span>
                 </div>
-                <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+                <%- if( current_user.login == params[ :user_id ] ) -%>
                     <%= link_to( 'Update', '/auth/yahoo', { :class => 'btn btn-info btn-mtop' } ) -%>
                     <%= link_to( 'Remove', destroy_provider_path( :uid => auth_yahoo.uid ), { :class => 'btn btn-danger btn-mtop', :method => :delete, :data => { :confirm => 'Are you sure to remove your Yahoo Account of this page?' } } ) -%>
                 <%- end -%>
-            <%- elsif( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+            <%- elsif( current_user.login == params[ :user_id ] ) -%>
                 <%= link_to( 'Connect with Yahoo', '/auth/yahoo', { :class => 'btn btn-info' } ) -%>
             <%- end -%>
         </div>

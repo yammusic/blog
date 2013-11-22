@@ -1,0 +1,8 @@
+
+es:
+  lang:
+    en: 'Ingles'
+    es: 'Español'
+  index:
+    written_by: 'Publicado por '
+    read_more: 'Leer Mas'

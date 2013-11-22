@@ -25,7 +25,9 @@
 						<%- post.categories.all.each do | c | -%>
 							<li><%= link_to( raw( "<span>></span>" + c.name ), category_path( c ) ) -%></li>
 						<%- end -%>
-						<li><%= raw( "<span>></span>Written By " + link_to( post.author, user_profiles_path( :user_id => post.author ) ) ) -%></li>
+						<li>
+							<%= raw( "<span>></span>"+ t( 'index.written_by' ).to_s ) -%>
+							<%= link_to( post.author, user_profiles_path( :user_id => post.author ) ) -%></li>
 						<li><span>></span><%= comments -%> Comments</li>
 						<li><%= raw( "<span>></span>Created " ) + post.created -%></li>
 					</ul>
@@ -34,7 +36,7 @@
 					<h1><%= link_to( post.title, post_path( post ) ) -%></a></h1>
 					<p><%= raw( post.description ) -%></p>
 					<ul class="actions">
-						<li><%= link_to( 'Read More', post_path( post ) ) -%></li>
+						<li><%= link_to( t( 'index.read_more' ), post_path( post ) ) -%></li>
 						<%- if ( can?( :destroy, Post ) ) -%>
 							<li><%= link_to( 'Destroy Post', post_path( post ), { :method => :delete, :data => { :confirm => 'Are you sure?' } } ) -%></li>
 						<%- end -%>

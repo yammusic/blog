@@ -1,21 +1,22 @@
-<%= form_for( @user, { :url => create_user_users_path, :method => :put } ) do |f| %>
+<%- lang = { t( 'lang.en') => 'en', t( 'lang.es' ) => 'es' } -%>
+<%= form_for( @user, { :url => create_user_users_path( :authentication => params[ :user ][ :authentications_attributes ] ), :method => :put } ) do |f| %>
 
   <legend>Account Info</legend>
   <div style="margin-top: 20px;">
-    <%= f.label :login, 'Username', { :class => 'label label-info' } %>
-    <%= f.text_field :login, { :autofocus => true, :required => true, :placeholder => 'Username', :value => params[ :user ][ :login ].gsub( '.', '-' ) } %>
+    <%= f.label( :login, 'Username', { :class => 'label label-info' } ) -%>
+    <%= f.text_field( :login, { :autofocus => true, :required => true, :placeholder => 'Username', :value => params[ :user ][ :login ].gsub( '.', '-' ).gsub( ' ', '-' ) } ) -%>
   </div><br>
   <div>
-    <%= f.label :email, { :class => 'label label-info' } %>
-    <%= f.email_field :email, { :required => true, :placeholder => 'Email', :value => params[ :user ][ :email ] } %>
+    <%= f.label( :email, { :class => 'label label-info' } ) -%>
+    <%= f.email_field( :email, { :required => true, :placeholder => 'Email', :value => params[ :user ][ :email ] } ) -%>
   </div><br>
   <div>
-    <%= f.label :password, { :class => 'label label-info' } %>
-    <%= f.password_field :password, { :required => true, :placeholder => 'Your Password' } %>
+    <%= f.label( :password, { :class => 'label label-info' } ) -%>
+    <%= f.password_field( :password, { :required => true, :placeholder => 'Your Password' } ) -%>
   </div><br>
-  <div style="margin-bottom: 15px;">
-    <%= f.label :password_confirmation, { :class => 'label label-info' } %>
-    <%= f.password_field :password_confirmation, { :required => true, :placeholder => 'Repeat your password' } %>
+  <div>
+    <%= f.label( :password_confirmation, { :class => 'label label-info' } ) -%>
+    <%= f.password_field( :password_confirmation, { :required => true, :placeholder => 'Repeat your password' } ) -%>
   </div><br>
 
   <%= f.fields_for( :profile ) do | p | -%>
@@ -23,10 +24,14 @@
     <%= p.hidden_field( :last_name, { :value => params[ :user ][ :profile_attributes ][ :last_name ] } ) -%>
     <%= p.hidden_field( :remote_avatar_url, { :value => params[ :user ][ :profile_attributes ][ :remote_avatar_url ] } ) -%>
     <%= p.hidden_field( :role, { :value => params[ :user ][ :profile_attributes ][ :role ] } ) -%>
+    <div style="margin-bottom: 10px;">
+      <%= p.label( :lang, 'Language', { :class => 'label label-info' } ) -%>
+      <%= p.select( :lang, lang ) -%>
+    </div><br>
   <%- end -%>
 
   <div>
-    <%= f.submit "Sign up", { :class => 'btn btn-info', :style => 'margin-bottom:20px;' } %>
+    <%= f.submit( "Sign up", { :class => 'btn btn-info', :style => 'margin-bottom:20px;' } ) -%>
   </div>
 <% end %>
 <br>

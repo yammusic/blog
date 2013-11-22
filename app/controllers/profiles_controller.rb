@@ -3,24 +3,24 @@ class ProfilesController < ApplicationController
   skip_authorize_resource :only => [ :index, :update_avatar, :update_profile, :profile, :avatar, :social, :account ]
 
   def index
-    @user = User.find_by_params_profile( params )
+    @user = User.find_by_login( params[ :user_id ] )
     @profile = @user.profile
 
     respond_to do |format|
         #format.xml { render( { :xml => @profile } ) }
         #return
-        format.html {
-            if ( request.xhr? || !params[ :layout ].nil? )
-                render( { :layout => false } )
-            else
-                render( :index ) # index.html.erb
-            end
-        }
+        # format.html {
+        #     if ( request.xhr? || !params[ :layout ].nil? )
+        #         render( { :layout => false } )
+        #     else
+        #         render( :index ) # index.html.erb
+        #     end
+        # }
         #format.js { render( { :js => 'alert( "Hello World!" );' } ) }
-        format.js { render( :index ) } # index.js.erb
+        # format.js { render( :index ) } # index.js.erb
         format.json { render( { :json => @profile } ) }
         #format.xml { render( { :xml => @profile } ) }
-        format.xml { render( :index ) } # index.xml.erb
+        format.html { render( :index ) } # index.html.erb
     end
   end
 
@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
     if ( @profile.update_attributes( params[ :user_profile ] ) )
       redirect_to( avatar_user_profiles_path( current_user ) )
     else
-      render(:text => 'error al guardar imagen')
+      render( :text => 'error al guardar imagen' )
     end
   end
 

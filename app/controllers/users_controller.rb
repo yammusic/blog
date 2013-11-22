@@ -8,14 +8,17 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @profile = @user.build_profile
+        @user.build_profile
     end
 
     def create_user
         params[ :user ][ :profile_attributes ][ :role ] = 'user'
+        params[ :user ][ :login ] = params[ :user ][ :login ].gsub( '.', '-' ).gsub( ' ', '-' )
         @user = User.new( params[ :user ] )
         @profile = @user.build_profile( params[ :user ][ :profile_attributes ] )
-        if @user.save!
+
+        if ( @user.save! )
+            @authentication = @user.authentications.create!( params[ :authentication ] ) if( !params[ :authentication ].nil? )
             sign_in( @user, { :bypass => true } )
             if ( !params[ :session_post ].nil? )
                 redirect_to( post_path( params[ :session_post ], :anchor => 'comment-anchor' ) )
@@ -28,11 +31,11 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find_by_params( params )
+        @user = User.find_by_login( params[ :id ] )
     end
 
     def update
-        @user = User.find_by_params( params )
+        @user = User.find_by_login( params[ :id ] )
         if ( @user.update_attributes( params[ :user ] ) )
             redirect_to( users_path )
         else

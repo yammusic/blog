@@ -1,4 +1,5 @@
 <%- sex = { 1 => 'Male', 2 => 'Female' } -%>
+<%- lang = { 'en' => t( 'lang.en' ), 'es' => t( 'lang.es' ) } -%>
 <h3>Basic Information</h3>
 <hr style="margin-top: -30px; border-color: silver;">
 <div class="profile-info">
@@ -25,8 +26,13 @@
     </div>
     <div class="block-info">
         <span class="label label-info"><%= sex[ user.profile.sex ] -%></span>
+    </div><br>    
+    <div class="block-label">
+        <span class="label">Language:</span>
+    </div>
+    <div class="block-info">
     </div><br>
-    <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+    <%- if( current_user.login == params[ :user_id ] ) -%>
         <div class="profile-actions">
             <%= button_tag( 'Edit Profile', { :class => 'btn btn-inverse', :type => nil, :name => nil, :id => 'edit-profile-btn' } ) -%>
         </div>
@@ -59,7 +65,11 @@
         <div class="block-info">
             <%= f.select( :sex, sex ) -%>
         </div><br>
-        <%- if( current_user.login == params[ :user_id ].gsub( '-', ' ' ) ) -%>
+        <div class="block-label">
+        </div>
+        <div class="block-info">
+        </div><br>
+        <%- if( current_user.login == params[ :user_id ] ) -%>
             <div class="profile-actions">
                 <%= f.submit( 'Save', { :class => 'btn btn-inverse' } ) -%>
                 <%= button_tag( 'Back', { :class => 'btn btn-inverse back', :type => nil, :name => nil, :id => 'back-profile-btn' } ) -%>

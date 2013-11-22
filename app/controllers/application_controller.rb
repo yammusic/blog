@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
     authorize_resource :unless => :authorize_resource_validator
     layout :set_layout
 
+    before_filter :set_lang
+
     #=================================
     # authorize_resource_validator
     #=================================
@@ -21,5 +23,14 @@ class ApplicationController < ActionController::Base
         end
 
         return( layout )
+    end
+
+    private
+    def set_lang
+        if ( user_signed_in? )
+            I18n.locale = 'es'
+        else
+            I18n.locale = 'en'
+        end
     end
 end

@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
-  has_one :profile
-  has_many :authentications
-  has_many :comments
+  has_one :profile, :dependent => :destroy
+  has_many :authentications, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 
-  accepts_nested_attributes_for :profile, :authentications, :comments
+  accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :authentications
+  accepts_nested_attributes_for :comments
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,7 +16,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :email, :password, :password_confirmation, :remember_me, :reset_password_token, :profile_attributes
 
-  def self.find_first_by_auth_conditions(warden_conditions)
+  def self.find_first_by_auth_conditions( warden_conditions )
     conditions = warden_conditions.dup
     if login = conditions.delete( :login )
       where( conditions ).where( [ "lower(login) = :value OR lower(email) = :value", { :value => login.downcase } ] ).first

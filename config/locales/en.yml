@@ -2,7 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  lang:
+    en: 'English'
+    es: 'Spanish'
+  index:
+    written_by: 'Wrriten By '
+    read_more: 'Read More'
   # views:
   #   pagination:
   #     previous: "&lt; Previous"
