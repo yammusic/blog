@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     private
     def set_lang
         if ( user_signed_in? )
-            I18n.locale = 'es'
+            I18n.locale = current_user.profile.lang.to_s
         else
             I18n.locale = 'en'
         end

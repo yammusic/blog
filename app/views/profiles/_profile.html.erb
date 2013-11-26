@@ -31,6 +31,7 @@
         <span class="label">Language:</span>
     </div>
     <div class="block-info">
+        <span class="label label-info"><%= lang[ user.profile.lang ] -%></span>
     </div><br>
     <%- if( current_user.login == params[ :user_id ] ) -%>
         <div class="profile-actions">
@@ -40,6 +41,7 @@
 </div>
 <div class="profile-form profile-info">
     <%- sex = { 'Male' => 1, 'Female' => 2 } -%>
+    <%- lang = { t( 'lang.en' ) => 'en', t( 'lang.es' ) => 'es' } -%>
     <%= form_for( user.profile, { :as => :user_profile, :url => update_profile_user_profiles_path( user.profile ), :method => :put } ) do |f| -%>
         <div class="block-label">
             <%= f.label( :first_name, 'First Name:', { :class => 'label' } ) -%>
@@ -66,8 +68,10 @@
             <%= f.select( :sex, sex ) -%>
         </div><br>
         <div class="block-label">
+            <%= f.label( :lang, 'Language:', { :class => 'label' } ) -%>
         </div>
         <div class="block-info">
+            <%= f.select( :lang, lang ) -%>
         </div><br>
         <%- if( current_user.login == params[ :user_id ] ) -%>
             <div class="profile-actions">

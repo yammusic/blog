@@ -3,6 +3,15 @@ es:
   lang:
     en: 'Ingles'
     es: 'Español'
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
   index:
-    written_by: 'Publicado por '
+    written_by: 'Publicado por'
+    comments: 'Comentarios'
+    created: 'Creado'
     read_more: 'Leer Mas'

@@ -6,7 +6,9 @@ en:
     en: 'English'
     es: 'Spanish'
   index:
-    written_by: 'Wrriten By '
+    written_by: 'Written By'
+    comments: 'Comments'
+    created: 'Created'
     read_more: 'Read More'
   # views:
   #   pagination:
