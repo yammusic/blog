@@ -28,8 +28,8 @@
 						<li>
 							<%= raw( "<span>></span>"+ t( 'index.written_by' ).to_s ) -%>
 							<%= link_to( post.author, user_profiles_path( :user_id => post.author ) ) -%></li>
-						<li><span>></span><%= comments -%> Comments</li>
-						<li><%= raw( "<span>></span>Created " ) + post.created -%></li>
+						<li><span>></span><%= comments -%> <%= t( 'index.comments' ) -%></li>
+						<li><%= raw( "<span>></span>"+ t( 'index.created' ).to_s ) +' '+ post.created -%></li>
 					</ul>
 				</aside>
 				<div class="content">
