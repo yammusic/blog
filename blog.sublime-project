@@ -7,7 +7,7 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/var/www/GameTest"
+			"path": "/var/www/MVC-CRUD"
 		}
 	]
 }

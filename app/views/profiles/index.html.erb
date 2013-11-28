@@ -22,7 +22,7 @@
             <aside class="nav-info">
                 <ul>
                     <li<%= raw( profile_class ) -%>><%= link_to( 'Profile', '#profile' ) -%></li>
-                    <%- if( current_user.login == params[ :user_id ] ) -%>
+                    <%- if( user_signed_in? && current_user.login == params[ :user_id ] ) -%>
                       <li<%= raw( avatar_class ) -%>><%= link_to( 'Avatar', '#avatar' ) -%></li>
                     <%- end -%>
                     <li<%= raw( social_class ) -%>><%= link_to( 'Social Networks', '#social-networks' ) -%></li>
@@ -33,7 +33,7 @@
                 <div id="profile"<%= raw( profile_style ) -%>>
                     <%= render( { :partial => 'profiles/profile', :locals => { :user => @user } } ) -%>
                 </div>
-                <%- if( current_user.login == params[ :user_id ] ) -%>
+                <%- if( user_signed_in? && current_user.login == params[ :user_id ] ) -%>
                   <div id="avatar" <%= raw( avatar_style ) -%>>
                       <%= render( { :partial => 'profiles/avatar', :locals => { :user => @user } } ) -%>
                   </div>
